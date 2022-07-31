@@ -13,6 +13,7 @@ import friends from './avatars/friends.png'
 import enemies from './avatars/enemies.png'
 import teacher from './avatars/teacher.png'
 import director from './avatars/director.png'
+
 import styles from './styles.module.scss'
 
 function Header({ amount }: { amount: number }) {
