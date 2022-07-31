@@ -1,10 +1,12 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 
+import { getPaymentData, pay } from '%/utils'
 
 import Input from '%/components/common/Input'
 import Checkbox from '%/components/common/Checkbox'
@@ -71,6 +73,7 @@ function Info(props: InfoProps) {
 
 function Form(props: any) {
   const { t } = useTranslation(['auth', 'common'])
+  const router = useRouter()
 
   return (
     <Formik
@@ -93,10 +96,10 @@ function Form(props: any) {
         })
       }
       onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 4000)
+        getPaymentData({ uuid: router.query.pay }).then(resPaymentData => {
+          pay(resPaymentData)
+          setSubmitting(false)
+        })
       }}
     >
       {({
@@ -109,8 +112,8 @@ function Form(props: any) {
       }) => (
         <form onSubmit={handleSubmit}>
           <Input
-            type="email"
-            name="email"
+            type='email'
+            name='email'
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
@@ -126,7 +129,8 @@ function Form(props: any) {
             className={styles.terms}
             longLabel
           >
-            Нажимая кнопку “Оплатить” Вы даете согласие на <Link href='#'><a className={styles.termsLink}>обработку персональных данных</a></Link>, а также подтверждаете ознакомление с публичной офертой.
+            Нажимая кнопку “Оплатить” Вы даете согласие на <Link href='#'><a className={styles.termsLink}>обработку
+            персональных данных</a></Link>, а также подтверждаете ознакомление с публичной офертой.
           </Checkbox>
           <Checkbox
             id='auto_pay_agreement'
@@ -136,7 +140,8 @@ function Form(props: any) {
             className={styles.terms}
             longLabel
           >
-            Нажимая кнопку “Оплатить” Вы подтверждаете ознакомление с автоматическими списаниями. Первое списание в размере 1₽ через 72 часа после подписки, и далее согласно тарифу раз в 7 дней 199₽ или 49₽ за день
+            Нажимая кнопку “Оплатить” Вы подтверждаете ознакомление с автоматическими списаниями. Первое списание в
+            размере 1₽ через 72 часа после подписки, и далее согласно тарифу раз в 7 дней 199₽ или 49₽ за день
           </Checkbox>
           <div>
             <Button
@@ -151,7 +156,6 @@ function Form(props: any) {
     </Formik>
   )
 }
-
 
 export async function getStaticProps(context: { locale: string }) {
   return {

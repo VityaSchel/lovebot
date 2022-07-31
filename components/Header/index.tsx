@@ -1,5 +1,6 @@
 import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import cx from 'classnames'
 
 import { declOfRoubles } from '%/utils'
@@ -14,8 +15,9 @@ import teacher from './avatars/teacher.png'
 import director from './avatars/director.png'
 import styles from './styles.module.scss'
 
-function Header({ toggleModal, amount }: { toggleModal: any, amount: number }) {
+function Header({ amount }: { amount: number }) {
   const { t } = useTranslation('homePage')
+  const router = useRouter()
 
   const who = [
     {
@@ -33,8 +35,7 @@ function Header({ toggleModal, amount }: { toggleModal: any, amount: number }) {
     {
       image: teacher,
       title: t('content.who3')
-    },
-
+    }
   ]
 
   function Who() {
@@ -88,7 +89,8 @@ function Header({ toggleModal, amount }: { toggleModal: any, amount: number }) {
         <div className={styles.content}>
           <div>
             <Heading variant='h1' center>{t('content.tryPrank')}</Heading>
-            <Heading variant='h1' center className={styles.gradient}>{t('content.price')} {amount} {declOfRoubles(amount)}</Heading>
+            <Heading variant='h1' center className={styles.gradient}>{t('content.price')} {amount} {declOfRoubles(
+              amount)}</Heading>
           </div>
 
           <div>{t('content.recordCall')}</div>
@@ -98,7 +100,7 @@ function Header({ toggleModal, amount }: { toggleModal: any, amount: number }) {
               size='large'
               mode='solid'
               buttonProps={{
-                onClick: toggleModal
+                onClick: () => router.push('/subscription-payment')
               }}>
               {t('content.tryPrice')} {amount} {declOfRoubles(amount)}
             </Button>

@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next'
-import Image from 'next/image'
+import { useRouter } from 'next/router'
 import Fade from 'react-reveal'
 
 import { declOfRoubles } from '%/utils'
@@ -15,8 +15,9 @@ import bottom from './icons/bottom.svg'
 import styles from './styles.module.scss'
 import cn from 'classnames'
 
-export default function Promo({ toggleModal, amount }: { toggleModal: any, amount: number }) {
+export default function Promo({  amount }: {  amount: number }) {
   const { t } = useTranslation('homePage')
+  const router = useRouter()
 
   return (
     <Fade bottom cascade>
@@ -33,7 +34,7 @@ export default function Promo({ toggleModal, amount }: { toggleModal: any, amoun
             size='large'
             mode='solid'
             buttonProps={{
-              onClick: toggleModal
+              onClick: () => router.push('/subscription-payment')
             }}>
             {t('content.tryPrice')} {amount} {declOfRoubles(amount)}
           </Button>

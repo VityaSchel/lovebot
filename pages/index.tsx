@@ -11,7 +11,6 @@ import Head from '%/components/common/Head'
 import Loading from '%/components/common/Loading'
 
 import Header from '%/components/Header'
-import Modal from '%/components/Modal'
 import Footer from '%/components/Footer'
 import Examples from '%/components/Examples'
 import Tutorial from '%/components/Tutorial'
@@ -25,8 +24,6 @@ const Home: NextPage = () => {
   const { t } = useTranslation('homePage')
   const router = useRouter()
   const [amount, setAmount] = useState(0)
-  const [modal, setModal] = useState(false)
-  const toggleModal = () => setModal(!modal)
 
   useEffect(() => {
     if (router.isReady) {
@@ -47,11 +44,10 @@ const Home: NextPage = () => {
       <Head title={t('title')} description={t('description')} />
       <Loading />
       <div className={styles.container}>
-        <Header toggleModal={toggleModal} amount={amount} />
-        <Modal modal={modal} toggleModal={toggleModal} />
+        <Header amount={amount} />
         <Examples />
-        <Tutorial toggleModal={toggleModal} amount={amount} />
-        <Promo toggleModal={toggleModal} amount={amount} />
+        <Tutorial amount={amount} />
+        <Promo amount={amount} />
         <Footer />
       </div>
     </>

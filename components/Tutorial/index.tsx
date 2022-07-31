@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next'
-import Image from 'next/image'
+import { useRouter } from 'next/router'
 import Fade from 'react-reveal'
 
 import Heading from '%/components/common/Heading'
@@ -12,8 +12,9 @@ import ex2 from './images/ex2.png'
 import ex3 from './images/ex3.svg'
 import { declOfRoubles } from '%/utils'
 
-export default function Tutorial({ toggleModal, amount }: { toggleModal: any, amount: number }) {
+export default function Tutorial({ amount }: { amount: number }) {
   const { t } = useTranslation('homePage')
+  const router = useRouter()
 
   const contents = [
     {
@@ -70,7 +71,7 @@ export default function Tutorial({ toggleModal, amount }: { toggleModal: any, am
                       size='medium'
                       mode='solid'
                       buttonProps={{
-                        onClick: toggleModal
+                        onClick: () => router.push('/subscription-payment')
                       }}>
                       {t('content.tryPrice')} {amount} {declOfRoubles(amount)}
                     </Button>
