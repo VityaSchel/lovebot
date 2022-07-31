@@ -1,0 +1,53 @@
+@import '%/styles/breakpoints.scss';
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 68px 20px;
+  
+  @media screen and (max-width: $breakpoint-phone) {
+    padding-top: 28px;
+  }
+  
+  .link {
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  
+  .image {
+    margin-top: 72px;
+    
+    svg {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  .title {
+    margin-top: 44px;
+  }
+  
+  .description {
+    margin-top: 24px;
+    text-align: center;
+    
+    span:nth-child(2) {
+      font-weight: 600;
+    }
+  }
+  
+  .description + .description {
+    margin-top: 12px;
+  }
+  
+  .button {
+    margin-top: 44px;
+    
+    @media screen and (max-width: $breakpoint-phone) {
+      width: 100%;
+    }
+  }
+}

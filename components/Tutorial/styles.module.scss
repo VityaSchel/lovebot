@@ -1,0 +1,127 @@
+@import '%/styles/breakpoints.scss';
+@import '%/styles/gradient.scss';
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 46px;
+  
+  @media screen and (max-width: $breakpoint-phone) {
+    gap: 20px;
+    padding: 0;
+  }
+  
+  .heading {
+    padding: 0 88px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    @media screen and (max-width: tablet) {
+      gap: 12px;
+    }
+    
+    @media screen and (max-width: $breakpoint-phone) {
+      padding: 0 18px;
+      gap: 18px;
+    }
+  }
+  
+  .rows {
+    display: flex;
+    flex-direction: column;
+    
+    @media screen and (max-width: $breakpoint-tablet) {
+      gap: 60px 0;
+    }
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    flex-wrap: wrap;
+    gap: 30px 100px;
+    
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+    }
+    
+    @media screen and (max-width: $breakpoint-tablet) {
+      flex-direction: column !important;
+    }
+    
+    .item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      max-width: 540px;
+      
+      &Id {
+        @extend .gradient;
+        position: absolute;
+        font-weight: 700;
+        font-size: 90px;
+        
+        @media screen and (max-width: $breakpoint-tablet) {
+          position: relative;
+          left: 0 !important;
+        }
+      }
+      
+      &Image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+      
+      &Content {
+        padding: 0 18px;
+        display: flex;
+        flex-direction: column;
+        
+        @media screen and (max-width: $breakpoint-tablet) {
+          align-items: center;
+          text-align: center;
+        }
+        
+        .title {
+          @extend .gradient;
+          font-weight: 700;
+          font-size: 22px;
+          line-height: 140%;
+        }
+        
+        .description {
+          margin-top: 6px;
+          font-size: 16px;
+          line-height: 150%;
+          color: var(--secondary-text-color);
+          max-width: 70%;
+  
+          @media screen and (max-width: $breakpoint-tablet) {
+            max-width: 100%;
+          }
+        }
+        
+        .button {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'SF Pro Text';
+  src: local('SF Pro Text Medium'), local('SFProText-Medium'),
+    url('SF-Pro-Text-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: local('SF Pro Text Regular'), local('SFProText-Regular'),
+    url('SF-Pro-Text-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: local('SF Pro Text Regular Italic'), local('SFProText-RegularItalic'),
+    url('SF-Pro-Text-RegularItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}

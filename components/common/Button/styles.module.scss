@@ -1,0 +1,119 @@
+@import '%/styles/breakpoints.scss';
+@import '%/styles/util.scss';
+
+.buttonContainer {
+  width: inherit;
+  border-radius: 99px;
+
+  .button {
+    transition: transform 80ms ease-out;
+    width: inherit;
+    border-radius: 99px;
+
+    &:hover {
+      transform: scale(1.025);
+    }
+
+    &.pressed {
+      transform: scale(0.95);
+    }
+
+    .muiButton {
+      font-family: 'SF Pro Display', sans-serif;
+      width: inherit;
+      border-radius: 99px;
+      text-transform: none;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+
+      padding: 15px 28px;
+      
+      @include defaultTransition((background, color));
+  
+      &.extraLarge {
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 150%;
+        padding: 28px 42px;
+  
+        @media screen and (max-width: $breakpoint-phone) {
+          font-size: 24px;
+          padding: 20px 34px;
+        }
+      }
+      
+      &.large {
+        padding: 20px 34px;
+      }
+      
+      &.medium {
+        padding: 16px 26px;
+        font-size: 16px;
+        line-height: 19px;
+      }
+      
+      &.small {
+        padding: 6px 14px;
+      }
+      
+      &.icon {
+        min-width: 0;
+        padding: 13px;
+        box-sizing: border-box;
+
+        svg {
+          $size: 20px;
+          width: $size;
+          height: $size;
+        }
+      }
+      
+      &.transparent {
+        background: transparent;
+        border: 1px solid #F56B18;
+        color: #F56B18;
+        box-shadow: 0px 4px 14px rgba(82, 82, 82, 0.08);
+      }
+  
+      &.transparent:hover {
+        border: 1px solid #00A8FF;
+        color: #00A8FF;
+        box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.09);
+      }
+  
+      &.solid {
+        background: linear-gradient(to right, #FBB34C, #F56B18);
+        color: #fff;
+      }
+
+      &.grayStroke,
+      &.colorStroke {
+        border-width: 1px;
+        border-style: solid;
+        color: var(--primary-text-color);
+        background: var(--outlined-button-background);
+        @include defaultTransition(background);
+      }
+
+      &.grayStroke {
+        border-color: #EBEBEB;
+      }
+
+      &.colorStroke {
+        border: none;
+        margin: 1px;
+      }
+    }
+
+    &.colorStroke {
+      background: linear-gradient(to right, #FBB34C, #F56B18);
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.8;
+  }
+}

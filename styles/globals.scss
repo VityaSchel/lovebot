@@ -1,0 +1,64 @@
+@import '../public/static/fonts/SFProDisplay/stylesheet.css';
+@import '../public/static/fonts/SFProText/stylesheet.css';
+
+html {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  background-color: var(--page-background) !important;
+  color: var(--primary-text-color) !important;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body.noOverflow {
+  overflow-y: hidden;
+  
+  body {
+    overflow-y: hidden;
+  }
+}
+
+body {
+  --page-background: #FFFFFF;
+  --primary-text-color: #303030;
+  --secondary-text-color: #6D6D6D;
+  --primary-button-color: #FFFFFF;
+  --card-background: #FFFFFF;
+  --input-background: #FFFFFF;
+  --input-border-color: #EBEBEB;
+  --input-placeholder: #BABABA;
+  --outlined-button-background: var(--page-background);
+  --success: #54E03E;
+  --error: #FA7565;
+}
+
+body.dark {
+  --page-background: #19222B;
+  --primary-text-color: #FFFFFF;
+  --secondary-text-color: #FFFFFF;
+  --card-background: #212C37;
+  --input-background: #212C37;
+  --input-border-color: #6B7681;
+  --input-placeholder: #BABABA;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

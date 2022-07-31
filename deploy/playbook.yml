@@ -1,0 +1,15 @@
+---
+- name: deploy to production
+  hosts: botbiz_frontend_panel
+
+  tasks:
+    - name: Copy docker-compose.yml
+      copy:
+        src: ../docker-compose.yml
+        dest: /root/botbiz_frontend_panel/docker-compose.yml
+
+    - name: Pull new image
+      shell: docker compose -f /root/botbiz_frontend_panel/docker-compose.yml pull frontend_panel
+
+    - name: Redeploy
+      shell: docker compose -f /root/botbiz_frontend_panel/docker-compose.yml up -d

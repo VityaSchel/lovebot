@@ -1,0 +1,86 @@
+.inputContainer {
+  position: relative;
+  
+  .input {
+    width: 100%;
+    padding: 15px 28px;
+    background: var(--input-background);
+    border-radius: 100px;
+    color: var(--primary-text-color);
+    border: 1px solid var(--input-border-color);
+    
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    font-family: 'SF Pro Display', sans-serif;
+    
+    &Center {
+      text-align: center;
+    }
+    
+    &::placeholder {
+      color: var(--input-placeholder)
+    }
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  
+  input.invalid {
+    background-color: #FFEEEF;
+  }
+  
+  .error {
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+    background-color: #38414A;
+    position: absolute;
+    color: #FFFFFF;
+    border-radius: 99px;
+    padding: 7px 15px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 5px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 14px;
+    z-index: 1;
+    left: calc(100% + 20px);
+    top: 50%;
+    transform: translateY(-50%);
+    
+    @media screen and (max-width: 768px) {
+      top: unset;
+      left: 100%;
+      bottom: 100%;
+      transform: translate(-50%, 50%);
+    }
+    
+    @media screen and (max-width: 650px) {
+      top: unset;
+      bottom: calc(100% - 10px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    &.visible {
+      opacity: 1;
+    }
+  }
+}
+
+

@@ -1,0 +1,28 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  image:
+    name: docker:19.03.12
+  services:
+    - name: docker:19.03.12-dind
+      alias: dockerdaemon
+  variables:
+    DOCKER_HOST: tcp://dockerdaemon:2375/
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
+    - docker build -f Dockerfile -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME" .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
+
+deploy:
+  stage: deploy
+  image: williamyeh/ansible:ubuntu18.04-onbuild
+#  rules:
+#    - if: '$CI_COMMIT_BRANCH == "main"'
+  variables:
+    ANSIBLE_HOST_KEY_CHECKING: "False"
+  script: ansible-playbook -i "$ANSIBLE_INVENTORY" ./deploy/playbook.yml

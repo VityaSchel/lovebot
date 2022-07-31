@@ -1,0 +1,69 @@
+$night: #00A8FF;
+$day: #F56B18;
+
+$iconMargin: 4.5px;
+$containerPadding: 2px;
+$iconSize: 14px;
+
+.container {
+  background-color: #F1F1F1;
+  border: 1px solid #EBEBEB;
+
+  padding: $containerPadding;
+  border-radius: 99px;
+  position: relative;
+
+  .backgroundBubble {
+    position: absolute;
+    background-color: #ffffff;
+    $bubbleSize: $iconSize + $iconMargin * 2;
+    width: $bubbleSize;
+    height: $bubbleSize;
+    border-radius: 99px;
+    z-index: 0;
+
+    left: $containerPadding;
+    transition: left 200ms ease-in-out;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    & > * {
+      margin: $iconMargin;
+      width: $iconSize;
+      height: $iconSize;
+    }
+
+    & > *:nth-child(1) {
+      color: $day;
+    }
+
+    & > *:nth-child(2) {
+      color: #000000;
+    }
+  }
+
+
+  &.darkTheme {
+    background-color: #364554;
+    border: 1px solid #364554;
+
+    .backgroundBubble {
+      left: $containerPadding + $iconSize + $iconMargin * 2;
+    }
+
+    .icons {
+      & > *:nth-child(1) {
+        color: #FFFFFF;
+      }
+
+      & > *:nth-child(2) {
+        color: $night;
+      }
+    }
+  }
+}

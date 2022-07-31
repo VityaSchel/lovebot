@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  color: var(--secondary-text-color);
+
+  .innerContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 18px;
+    color: inherit;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .checkmarkContainer {
+      border: 1px solid #EBEBEB;
+      border-radius: 6px;
+      background-color: rgba(0, 0, 0, 0);
+      $size: 24px;
+      width: $size;
+      min-width: $size;
+      height: $size;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input:focus-visible ~ .checkmarkContainer,
+    label:hover ~ .checkmarkContainer,
+    .checkmarkContainer:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    .checkmarkInner {
+      opacity: 0;
+    }
+    
+    input:checked ~ .checkmarkContainer .checkmarkInner {
+      opacity: 1;
+    }
+    
+    label {
+      color: inherit;
+      font-family: 'SF Pro Display', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      cursor: pointer;
+      user-select: none;
+      line-height: 21px;
+      margin-top: 2px;
+      
+      &.longLabel {
+        margin-top: -2px;
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.8;
+  }
+}

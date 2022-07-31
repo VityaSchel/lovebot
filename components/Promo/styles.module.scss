@@ -1,0 +1,74 @@
+@import '%/styles/breakpoints.scss';
+@import '%/styles/gradient.scss';
+
+.container {
+  margin: 100px 46px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  background: var(--card-background);
+  box-shadow: 0 0 19px rgba(0, 0, 0, 0.09);
+  border-radius: 28px;
+  padding: 46px 178px 40px;
+  
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding: 40px 108px 46px;
+  }
+  
+  @media screen and (max-width: $breakpoint-phone) {
+    width: 100%;
+    padding: 40px 18px 34px;
+    margin: 46px 0;
+  }
+  
+  .icon {
+    position: absolute;
+  }
+  
+  .left {
+    left: 0;
+    top: 24px;
+  }
+  
+  .right {
+    right: 0;
+    bottom: 32px;
+  }
+  
+  .bottom {
+    bottom: 0;
+    left: 48px;
+  }
+  
+  .button {
+    margin-top: 28px;
+  }
+  
+  @media screen and (max-width: $breakpoint-phone) {
+    .left {
+      left: -40px;
+      top: 90px;
+    }
+  
+    .right {
+      right: -20px;
+      bottom: 32px;
+    }
+  }
+
+  
+  .guard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 34px;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    color: #00A8FF;
+  }
+}
