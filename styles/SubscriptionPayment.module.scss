@@ -242,7 +242,7 @@
         transform: translateX(-50%);
         font-family: 'SF Pro Display';
         font-size: 14px;
-        color: #E0E0E0;
+        color: var(--secondary-text-color);
         width: max-content;
       }
     }
