@@ -8,18 +8,18 @@
   justify-content: center;
   align-items: center;
   padding: 56px;
-
+  
   @media screen and (max-width: 428px) {
     padding: 0px;
   }
-
+  
   .form {
     width: 942px;
     background-color: white;
     box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.09);
     border-radius: 38px;
     padding-top: 35px;
-
+    
     @media screen and (max-width: 428px) {
       border-radius: 0;
       box-shadow: none;
@@ -28,29 +28,29 @@
       flex-direction: column;
       width: 100%;
     }
-
+    
     .heading {
       display: flex;
       justify-content: space-between;
       padding: 0 62px;
       margin-bottom: 34px;
-
+      
       @media screen and (max-width: 428px) {
         padding-left: 0;
         align-items: center;
         flex-direction: column;
-
+        
         &.decorationLine::before {
           display: none;
         }
       }
-
+      
       .iconContainer {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 18px;
-
+        
         .icon {
           border: 1px solid #E1E1E1;
           border-radius: 999px;
@@ -60,16 +60,16 @@
           align-items: center;
         }
       }
-
+      
       h1 {
         font-size: 22px;
       }
     }
-
+    
     .decorationLine {
       padding-left: 62px;
       position: relative;
-
+      
       &::before {
         content: "";
         background: linear-gradient(to bottom, #FBB34C 0.76%, #F56B18 100.76%);
@@ -82,7 +82,7 @@
         border-radius: 99px;
       }
     }
-
+    
     .info {
       border-top: 1px solid #F5F5F5;
       position: relative;
@@ -91,14 +91,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
+      
       @media screen and (max-width: 428px) {
         // height: 642px;
         height: auto;
         flex: 1;
         padding: 70px 0;
       }
-
+      
       &::before,
       &::after {
         content: '';
@@ -109,36 +109,36 @@
         background-repeat: no-repeat;
         background-position-x: center;
       }
-
+      
       &::before {
         left: 0;
         background-image: url(../assets/SubscriptionPaymentPage/form_background_left.svg);
         width: 255px;
-
+        
         @media screen and (max-width: 428px) {
           background-position-x: -158px;
         }
       }
-
+      
       &::after {
         right: 0;
         background-image: url(../assets/SubscriptionPaymentPage/form_background_right.svg);
         width: 310px;
-
+        
         @media screen and (max-width: 428px) {
           background-position-x: 101px;
           background-position-y: -85px;
         }
       }
-
+      
       & > * {
         z-index: 1;
       }
-
+      
       @media screen and (max-width: 428px) {
-        
+      
       }
-
+      
       .securePayment {
         position: absolute;
         display: flex;
@@ -146,7 +146,7 @@
         gap: 8px;
         left: 62px;
         top: 26px;
-
+        
         @media screen and (max-width: 428px) {
           left: 50%;
           transform: translateX(-50%);
@@ -158,14 +158,14 @@
           color: #B6B6B6;
         }
       }
-
+      
       h2 {
         margin: 0;
         font-family: 'SF Pro Display';
         font-weight: 500;
         font-size: 20px;
       }
-
+      
       .price {
         font-family: 'Ubuntu', sans-serif;
         font-weight: 700;
@@ -175,17 +175,17 @@
         // display: flex;
         // align-items: flex-end;
         // gap: 42px;
-
+        
         .number {
           font-size: 100px;
         }
-
+        
         .label {
           font-size: 36px;
           margin-left: 3px;
         }
       }
-
+      
       .insteadOfPrice {
         font-family: 'SF Pro Display';
         font-weight: 500;
@@ -196,45 +196,45 @@
           color: #F88F32;
         }
       }
-  
+      
       form {
         margin-top: 62px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 31px;
-
+        
         @media screen and (max-width: 428px) {
           width: 100%;
         }
-  
+        
         .email {
           width: 438px;
-
+          
           @media screen and (max-width: 428px) {
             max-width: calc(100% - 100px);
           }
         }
-  
+        
         .terms {
-          color: #B6B6B6;
-
+          color: var(--secondary-text-color);
+          
           @media screen and (max-width: 428px) {
             max-width: calc(100% - 100px);
           }
-
+          
           label {
             max-width: 398px;
             font-size: 14px;
           }
-  
+          
           .termsLink {
             text-decoration: underline;
             text-underline-offset: 4px;
           }
         }
       }
-  
+      
       .footer {
         position: absolute;
         bottom: 30px;
