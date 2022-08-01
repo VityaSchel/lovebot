@@ -16,11 +16,12 @@ export default function ModulePage() {
     <main className={styles.container}>
       <Form
         icon={<HeartIcon />}
-        title={'LoveBot'}
+        title={'Пранк Бот'}
         module={{
           name: 'Модуль "Пранк Бот"',
-          description: 'Ищет тайных гостей твоей страницы, позволяет определять людей, которые интересуются тобой, ставят лайки и проявляют активность. Хороший заработок на одной из самых актуальных тем на все времена. Высокая конверсия и желание проверить своих тайных поклонников позволяют быстро окупать рекламу.',
-          monthlyPrice: 299
+          description: 'Пранкует людей через голосовой вызов',
+          amount: 1,
+          amountWithoutDiscount: 799
         }}
         link='site.com/pay/1506e770-ad77-4b90-8503-a08a5bdfbedc'
       />
@@ -34,7 +35,8 @@ interface FormProps {
   module: {
     name: string
     description: string
-    monthlyPrice: number
+    amount: number
+    amountWithoutDiscount: number
   }
   link: string
 }
@@ -55,9 +57,9 @@ function Form(props: FormProps) {
         <p>{props.module.description}</p>
       </div>
       <div className={styles.priceBlock}>
-        <h3 className={styles.decorationLine}>Стоимость подписки <span className={styles.orange}>1 ₽</span> в первый
-          месяц</h3>
-        <p>Далее {props.module.monthlyPrice} ₽ в месяц</p>
+        <h3 className={styles.decorationLine}>Стоимость подписки <span
+          className={styles.orange}>{props.module.amount} ₽</span> в первый месяц</h3>
+        <p>Далее {props.module.amountWithoutDiscount} ₽ в месяц</p>
       </div>
       <div className={styles.methodsBlock}>
         <h3 className={styles.decorationLine}>Методы оплаты</h3>

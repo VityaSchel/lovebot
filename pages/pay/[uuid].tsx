@@ -6,7 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 
-import { getPaymentData, pay } from '%/utils'
+import { declOfRoubles, getPaymentAmount, getPaymentData, pay } from '%/utils'
 
 import Input from '%/components/common/Input'
 import Checkbox from '%/components/common/Checkbox'
@@ -17,14 +17,15 @@ import { ReactComponent as ShieldIcon } from '%/assets/payments/shield.svg'
 
 import styles from '%/styles/SubscriptionPayment.module.scss'
 
-export default function SubscriptionPaymentPage() {
+export default function SubscriptionPaymentPage(props: any) {
   return (
     <main className={styles.container}>
       <Info
         icon={<HeartIcon />}
         title={'LoveBot'}
         subscription={{
-          monthlyPrice: 299
+          amount: props.amount,
+          amountWithoutDiscount: props.amountWithoutDiscount
         }}
       />
     </main>
@@ -35,7 +36,8 @@ interface InfoProps {
   icon: React.ReactNode
   title: string
   subscription: {
-    monthlyPrice: number
+    amount: number,
+    amountWithoutDiscount: number,
   }
 }
 
@@ -58,21 +60,21 @@ function Info(props: InfoProps) {
         </div>
         <h2>Попробуй подписку всего за</h2>
         <div className={styles.price}>
-          <span className={styles.number}>1</span>
-          <span className={styles.label}>рубль</span>
+          <span className={styles.number}>{props.subscription.amount}</span>
+          <span className={styles.label}>{declOfRoubles(props.subscription.amount)}</span>
         </div>
         <span className={styles.insteadOfPrice}>
-          вместо <span className={styles.strikethrough}>790 ₽</span>
+          вместо <span className={styles.strikethrough}>{props.subscription.amountWithoutDiscount} ₽</span>
         </span>
-        <Form />
-        <span className={styles.footer}>1 ₽ первый месяц, далее 790 ₽</span>
+        <Form subscription={props.subscription} />
+        <span className={styles.footer}>{props.subscription.amount} ₽ первый месяц, далее {props.subscription.amountWithoutDiscount} ₽</span>
       </div>
     </div>
   )
 }
 
 function Form(props: any) {
-  const { t } = useTranslation(['auth', 'common'])
+  const { t } = useTranslation(['homePage', 'common'])
   const router = useRouter()
 
   return (
@@ -85,14 +87,14 @@ function Form(props: any) {
       validationSchema={
         Yup.object().shape({
           email: Yup.string()
-            .email(t('form_errors.email_format_invalid', { ns: 'common' }))
-            .required(t('form_errors.required', { ns: 'common' })),
+            .email(t('form_errors.email_format_invalid', { ns: 'homePage' }))
+            .required(t('form_errors.required', { ns: 'homePage' })),
           personalDataAgreement: Yup.bool()
-            .equals([true], t('form_errors.must_be_checked', { ns: 'common' }))
-            .required(t('form_errors.required', { ns: 'common' })),
+            .equals([true], t('form_errors.must_be_checked', { ns: 'homePage' }))
+            .required(t('form_errors.required', { ns: 'homePage' })),
           autoPayAgreement: Yup.bool()
-            .equals([true], t('form_errors.must_be_checked', { ns: 'common' }))
-            .required(t('form_errors.required', { ns: 'common' }))
+            .equals([true], t('form_errors.must_be_checked', { ns: 'homePage' }))
+            .required(t('form_errors.required', { ns: 'homePage' }))
         })
       }
       onSubmit={(values, { setSubmitting }) => {
@@ -141,7 +143,7 @@ function Form(props: any) {
             longLabel
           >
             Нажимая кнопку “Оплатить” Вы подтверждаете ознакомление с автоматическими списаниями. Первое списание в
-            размере 1₽ через 72 часа после подписки, и далее согласно тарифу раз в 7 дней 199₽ или 49₽ за день
+            размере {props.subscription.amount}₽ через 72 часа после подписки, и далее согласно тарифу раз в месяц {props.subscription.amountWithoutDiscount} ₽
           </Checkbox>
           <div>
             <Button
@@ -157,16 +159,36 @@ function Form(props: any) {
   )
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: true
-  }
-}
+export async function getServerSideProps(context: any) {
+  const errorRedirect = () => ({
+    redirect: {
+      destination: '/error',
+      permanent: false
+    }
+  })
 
-export async function getStaticProps(context: { locale: string }) {
+  const { uuid } = context.query
+
+  if (!uuid) {
+    return errorRedirect()
+  }
+
+  const [amountData, paymentData] = await Promise.all([
+    getPaymentAmount({ uuid: uuid }),
+    getPaymentData({ uuid: uuid })
+  ])
+
+  if (!amountData || !paymentData) {
+    return errorRedirect()
+  }
+
   return {
     props: {
+      paths: [],
+      fallback: true,
+      amount: amountData.amount,
+      amountWithoutDiscount: amountData.amountWithoutDiscount,
+      payment: paymentData,
       ...(await serverSideTranslations(context.locale, ['common', 'homePage']))
     }
   }
