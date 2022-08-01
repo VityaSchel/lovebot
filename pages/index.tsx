@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import Button from '%/components/common/Button'
 
@@ -21,7 +22,7 @@ export default function ModulePage() {
           description: 'Ищет тайных гостей твоей страницы, позволяет определять людей, которые интересуются тобой, ставят лайки и проявляют активность. Хороший заработок на одной из самых актуальных тем на все времена. Высокая конверсия и желание проверить своих тайных поклонников позволяют быстро окупать рекламу.',
           monthlyPrice: 299
         }}
-        link='site.com/fd7cj9'
+        link='site.com/pay/1506e770-ad77-4b90-8503-a08a5bdfbedc'
       />
     </main>
   )
@@ -39,6 +40,8 @@ interface FormProps {
 }
 
 function Form(props: FormProps) {
+  const router = useRouter()
+
   return (
     <div className={styles.form}>
       <div className={styles.heading}>
@@ -52,7 +55,8 @@ function Form(props: FormProps) {
         <p>{props.module.description}</p>
       </div>
       <div className={styles.priceBlock}>
-        <h3 className={styles.decorationLine}>Стоимость подписки <span className={styles.orange}>1 ₽</span> в первый месяц</h3>
+        <h3 className={styles.decorationLine}>Стоимость подписки <span className={styles.orange}>1 ₽</span> в первый
+          месяц</h3>
         <p>Далее {props.module.monthlyPrice} ₽ в месяц</p>
       </div>
       <div className={styles.methodsBlock}>
@@ -68,7 +72,9 @@ function Form(props: FormProps) {
         <div className={styles.decorationLine}>
           <div className={styles.link}>
             <span>{props.link}</span>
-            <Button>Перейти в бота</Button>
+            <Button buttonProps={{
+              onClick: () => router.push('/pay/1506e770-ad77-4b90-8503-a08a5bdfbedc')
+            }}>Перейти в бота</Button>
           </div>
         </div>
       </div>

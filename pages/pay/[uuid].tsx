@@ -96,7 +96,7 @@ function Form(props: any) {
         })
       }
       onSubmit={(values, { setSubmitting }) => {
-        getPaymentData({ uuid: router.query.pay }).then(resPaymentData => {
+        getPaymentData({ uuid: router.query.uuid }).then(resPaymentData => {
           pay(resPaymentData)
           setSubmitting(false)
         })
@@ -155,6 +155,13 @@ function Form(props: any) {
       )}
     </Formik>
   )
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: true
+  }
 }
 
 export async function getStaticProps(context: { locale: string }) {
