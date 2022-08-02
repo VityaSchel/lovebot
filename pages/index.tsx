@@ -34,7 +34,7 @@ export default function ModulePage() {
             amount: 1,
             amountWithoutDiscount: 1490
           }}
-          link='vk.me/bespl_stik'
+          link='vk.com/teleprank'
         />
       </main>
     </>
