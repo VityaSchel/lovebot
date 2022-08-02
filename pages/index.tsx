@@ -1,6 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
+
+import Head from '%/components/common/Head'
+import Loading from '%/components/common/Loading'
 
 import Button from '%/components/common/Button'
 
@@ -11,21 +16,29 @@ import { ReactComponent as MastercardLogo } from '%/assets/payments/logos/master
 
 import styles from '../styles/Module.module.scss'
 
+
 export default function ModulePage() {
+  const { t } = useTranslation('homePage')
+
   return (
-    <main className={styles.container}>
-      <Form
-        icon={<HeartIcon />}
-        title={'Пранк Бот'}
-        module={{
-          name: 'Модуль "Пранк Бот"',
-          description: 'Пранкует людей через голосовой вызов',
-          amount: 1,
-          amountWithoutDiscount: 799
-        }}
-        link='vk.me/bespl_stik'
-      />
-    </main>
+    <>
+      <Head title={t('title')} description={t('description')} />
+      <Loading />
+      <main className={styles.container}>
+        <Form
+          icon={<HeartIcon />}
+          title={'Пранк Бот'}
+          module={{
+            name: 'Модуль "Пранк Бот"',
+            description: 'Пранк Бот позволяет заказать розыгрыш на любой номер телефона российского оператора. Для заказа розыгрыша, нужно выбрать аудио розыгрыш, указать номер телефона и подтвердить заказ. По подписке пользователю доступны несколько звонков в день. Более подробную информацию можно найти в разделе "Тарифы". После завершения звонка, сервис присылает полную запись разговора.',
+            amount: 1,
+            amountWithoutDiscount: 1490
+          }}
+          link='vk.me/bespl_stik'
+        />
+      </main>
+    </>
+
   )
 }
 
@@ -58,7 +71,7 @@ function Form(props: FormProps) {
       </div>
       <div className={styles.priceBlock}>
         <h3 className={styles.decorationLine}>Стоимость подписки <span
-          className={styles.orange}>{props.module.amount} ₽</span> в первый месяц</h3>
+          className={styles.orange}>{props.module.amount} ₽</span> в первые 6 часов</h3>
         <p>Далее {props.module.amountWithoutDiscount} ₽ в месяц</p>
       </div>
       <div className={styles.methodsBlock}>
@@ -75,25 +88,33 @@ function Form(props: FormProps) {
           <div className={styles.link}>
             <span>{props.link}</span>
             <Button buttonProps={{
-              onClick: () => router.push('/pay/1506e770-ad77-4b90-8503-a08a5bdfbedc')
+              onClick: () => router.push(`https://${props.link}`)
             }}>Перейти в бота</Button>
           </div>
         </div>
       </div>
       <footer>
         <div className={styles.top}>
-          <span>ИП Бондарь М.А.</span>
-          <span>ИНН: 310208225142</span>
-          <span>ОГРНИП: 321312300035189</span>
+          <span>ИП Деревлев Александр Генадьевич</span>
+          <span>ИНН: 101601117953</span>
+          <span>ОГРНИП: 322100000008640</span>
         </div>
         <div className={styles.links}>
-          <Link href='#'><a>Политика конфиденциальности</a></Link>
-          <Link href='#'><a>Пользовательское соглашение</a></Link>
-          <Link href='#'><a>Политика обработки данных</a></Link>
-          <Link href='#'><a>Отмена подписки</a></Link>
-          <Link href='#'><a>Тарифы</a></Link>
+          {/*<Link href='/static/data_policy.pdf'><a>Политика конфиденциальности</a></Link>*/}
+          <Link href='/static/user_agreement.pdf'><a target='_blank'>Пользовательское соглашение</a></Link>
+          <Link href='/static/data_policy.pdf'><a target='_blank'>Политика обработки данных</a></Link>
+          <Link href='/subscription-cancellation'><a>Отмена подписки</a></Link>
+          <Link href='/static/tarifes.pdf'><a target='_blank'>Тарифы</a></Link>
         </div>
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps(context: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(context.locale, ['common', 'homePage']))
+    }
+  }
 }

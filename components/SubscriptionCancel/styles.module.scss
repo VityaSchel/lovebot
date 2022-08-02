@@ -1,0 +1,117 @@
+@import '%/styles/breakpoints.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'SF Pro Display', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: #6D6D6D;
+  text-align: center;
+  
+  max-width: 640px;
+  gap: 32px;
+  padding: 48px;
+  
+  @media screen and (max-width: $breakpoint-tablet) {
+    gap: 16px;
+    padding: 20px;
+    font-size: 12px;
+    max-width: 100%;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .cluster {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+  
+    @media screen and (max-width: $breakpoint-tablet) {
+      gap: 8px;
+    }
+  }
+  
+  .label {
+    font-family: 'Roslyn Gothic Rus';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 44px;
+    color: #40414D;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 24px 40px;
+    width: fit-content;
+    
+    background: #FCFCFC;
+    border: 2px solid #EFEFEF;
+    border-radius: 22px;
+  
+    @media screen and (max-width: $breakpoint-tablet) {
+      gap: 20px;
+      width: 100%;
+    }
+    
+    &Input  {
+      input {
+        width: 290px;
+        font-size: 16px;
+      }
+  
+      @media screen and (max-width: $breakpoint-tablet) {
+        width: 100%;
+  
+        input {
+          width: 100%;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  
+  .description {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    
+    svg {
+      min-width: 20px;
+    }
+  }
+  
+  .status {
+    font-weight: 600;
+    
+    .success {
+      color: var(--success);
+    }
+    
+    .error {
+      color: var(--error);
+    }
+  }
+  
+  .button {
+    @media screen and (max-width: $breakpoint-phone) {
+      width: 100%;
+    }
+  }
+}
