@@ -1,6 +1,10 @@
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { Formik, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+
+import { paymentUnsubscribe } from '%/utils'
 
 import Input from '%/components/common/Input'
 import Button from '%/components/common/Button'
@@ -13,6 +17,9 @@ import styles from './styles.module.scss'
 
 export default function SubscriptionCancel() {
   const { t } = useTranslation('homePage')
+  const router = useRouter()
+  const [error, setError] = useState(false)
+  const [success, setSuccess] = useState(false)
 
   function Form() {
     return (
@@ -26,18 +33,24 @@ export default function SubscriptionCancel() {
           card_last: Yup.number().required(t('form_errors.required'))
         })}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
+          paymentUnsubscribe({ firstNumbers: values.card_last, lastNumbers: values.card_last }).then(unsubscribe => {
+            console.log('unsubscribe', unsubscribe)
+            if (!unsubscribe.success) {
+              setError(true)
+            } else {
+              setSuccess(true)
+            }
+          }).finally(() => {
             setSubmitting(false)
-          }, 1000)
+          })
         }}
       >
         {({ values, handleChange, handleBlur, handleSubmit, isSubmitting, setFieldValue }) => (
           <form onSubmit={handleSubmit}>
             <div className={styles.card}>
               <Input
-                type="number"
-                name="card_first"
+                type='number'
+                name='card_first'
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.card_first}
@@ -47,8 +60,8 @@ export default function SubscriptionCancel() {
               />
 
               <Input
-                type="number"
-                name="card_last"
+                type='number'
+                name='card_last'
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.card_last}
@@ -59,8 +72,8 @@ export default function SubscriptionCancel() {
             </div>
 
             <div className={styles.status}>
-              <div className={styles.success}>{t('subscription.unsubscribeSuccess')}</div>
-              <div className={styles.error}>{t('subscription.unsubscribeFailed')}</div>
+              {success && <div className={styles.success}>{t('subscription.unsubscribeSuccess')}</div>}
+              {error && <div className={styles.error}>{t('subscription.unsubscribeFailed')}</div>}
             </div>
 
             <div className={styles.button}>
@@ -90,24 +103,49 @@ export default function SubscriptionCancel() {
     )
   }
 
+  function Unsubscribe() {
+    return (
+      <>
+        <div className={styles.cluster}>
+          <Heading variant='h1'>{t('subscription.q1')}</Heading>
+          <div>{t('subscription.a1')}</div>
+        </div>
+        <div className={styles.cluster}>
+          <Heading variant='h2'>{t('subscription.q2')}</Heading>
+          <div>{t('subscription.a2')}</div>
+        </div>
+        <div className={styles.cluster}>
+          <Heading variant='h2'>{t('subscription.q3')}</Heading>
+          <div>{t('subscription.a3')}</div>
+        </div>
+        <div className={styles.cluster}>
+          <Heading variant='h1'>{t('subscription.card')}</Heading>
+          <Form />
+        </div>
+      </>
+    )
+  }
+
+  function UnsubscribeSuccess() {
+    return (
+      <>
+        <Heading variant='h2'>Жаль</Heading>
+        <Heading variant='h1'> Подписка отменена</Heading>
+        <div className={styles.button}>
+          <Button
+            buttonProps={{
+              onClick: () => router.push('/')
+            }}>
+            На главную
+          </Button>
+        </div>
+      </>
+    )
+  }
+
   return (
     <div className={styles.container}>
-      <div className={styles.cluster}>
-        <Heading variant="h1">{t('subscription.q1')}</Heading>
-        <div>{t('subscription.a1')}</div>
-      </div>
-      <div className={styles.cluster}>
-        <Heading variant="h2">{t('subscription.q2')}</Heading>
-        <div>{t('subscription.a2')}</div>
-      </div>
-      <div className={styles.cluster}>
-        <Heading variant="h2">{t('subscription.q3')}</Heading>
-        <div>{t('subscription.a3')}</div>
-      </div>
-      <div className={styles.cluster}>
-        <Heading variant="h1">{t('subscription.card')}</Heading>
-        <Form />
-      </div>
+      {success ? <UnsubscribeSuccess /> : <Unsubscribe />}
     </div>
   )
 }

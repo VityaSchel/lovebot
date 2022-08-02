@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  min-height: 100%;
   background-image: url(../assets/SubscriptionPaymentPage/background.svg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,19 +15,20 @@
   }
   
   .form {
+    display: flex;
+    flex-direction: column;
     width: 942px;
+    height: 100%;
     background-color: white;
     box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.09);
     border-radius: 38px;
     padding-top: 35px;
     
     @media screen and (max-width: 428px) {
+      width: 100%;
+      min-height: 100vh;
       border-radius: 0;
       box-shadow: none;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
     }
     
     .heading {
@@ -80,6 +82,7 @@
     }
     
     .info {
+      flex: 1;
       border-top: 1px solid #F5F5F5;
       position: relative;
       display: flex;
@@ -89,7 +92,6 @@
       
       @media screen and (max-width: 428px) {
         height: auto;
-        flex: 1;
       }
   
       h1 {
