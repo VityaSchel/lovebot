@@ -12,7 +12,7 @@ import Input from '%/components/common/Input'
 import Checkbox from '%/components/common/Checkbox'
 import Button from '%/components/common/Button'
 
-import { ReactComponent as HeartIcon } from '%/assets/ModulePage/heartIcon.svg'
+import { ReactComponent as Logo } from '%/public/static/logo.svg'
 import { ReactComponent as ShieldIcon } from '%/assets/payments/shield.svg'
 
 import styles from '%/styles/SubscriptionPayment.module.scss'
@@ -21,8 +21,8 @@ export default function SubscriptionPaymentPage(props: any) {
   return (
     <main className={styles.container}>
       <Info
-        icon={<HeartIcon />}
-        title={'LoveBot'}
+        icon={<Logo />}
+        title={'ПранкБот'}
         subscription={{
           amount: props.amount,
           amountWithoutDiscount: props.amountWithoutDiscount
@@ -131,7 +131,7 @@ function Form(props: any) {
             className={styles.terms}
             longLabel
           >
-            Нажимая кнопку “Оплатить” Вы даете согласие на <Link href='#'><a className={styles.termsLink}>обработку
+            Нажимая кнопку “Оплатить” Вы даете согласие на <Link href='/static/data_policy.pdf'><a target='_blank' className={styles.termsLink}>обработку
             персональных данных</a></Link>, а также подтверждаете ознакомление с публичной офертой.
           </Checkbox>
           <Checkbox
