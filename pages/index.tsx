@@ -23,7 +23,7 @@ export default function ModulePage() {
           amount: 1,
           amountWithoutDiscount: 799
         }}
-        link='site.com/pay/1506e770-ad77-4b90-8503-a08a5bdfbedc'
+        link='vk.me/bespl_stik'
       />
     </main>
   )

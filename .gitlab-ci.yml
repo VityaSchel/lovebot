@@ -21,8 +21,8 @@ build:
 deploy:
   stage: deploy
   image: williamyeh/ansible:ubuntu18.04-onbuild
-#  rules:
-#    - if: '$CI_COMMIT_BRANCH == "main"'
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
   variables:
     ANSIBLE_HOST_KEY_CHECKING: "False"
   script: ansible-playbook -i "$ANSIBLE_INVENTORY" ./deploy/playbook.yml
