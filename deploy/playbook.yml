@@ -1,15 +1,15 @@
 ---
 - name: deploy to production
-  hosts: xprank_frontend
+  hosts: lovebot1_landing
 
   tasks:
     - name: Copy docker-compose.yml
       copy:
         src: ../docker-compose.yml
-        dest: /root/xprank_frontend/docker-compose.yml
+        dest: /root/lovebot1_landing/docker-compose.yml
 
     - name: Pull new image
-      shell: docker compose -f /root/xprank_frontend/docker-compose.yml pull frontend_panel
+      shell: docker compose -f /root/lovebot1_landing/docker-compose.yml pull frontend_panel
 
     - name: Redeploy
-      shell: docker compose -f /root/xprank_frontend/docker-compose.yml up -d
+      shell: docker compose -f /root/lovebot1_landing/docker-compose.yml up -d

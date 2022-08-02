@@ -1,7 +1,8 @@
-import Router from 'next/router'
+// import Router from 'next/router'
 
 type payProps = {
   cloudpayments: any,
+  onSuccess: any
 }
 
 export function pay(props: payProps) {
@@ -9,7 +10,7 @@ export function pay(props: payProps) {
     // @ts-ignore
     const widget = new cp.CloudPayments()
 
-    const { cloudpayments } = props
+    const { cloudpayments, onSuccess } = props
 
     widget.pay(
       'charge', // auth или charge
@@ -17,7 +18,8 @@ export function pay(props: payProps) {
       {
         onSuccess: function(options: any) {
           // действие при успешной оплате
-          Router.push('/success')
+          // Router.push('/success')
+          onSuccess()
         },
         onFail: function(reason: any, options: any) {
           // действие при неуспешной оплате

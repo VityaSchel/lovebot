@@ -2,12 +2,12 @@ version: "3.9"
 
 services:
   frontend_panel:
-    image: registry.gitlab.com/prank_bot/prank_landing_new:main
+    image: registry.gitlab.com/lovebot1/landing:main
     restart: unless-stopped
     expose:
       - "80"
     environment:
-      - VIRTUAL_HOST=xprank.xyz
+      - VIRTUAL_HOST=loverbot.xyz
       - VIRTUAL_PORT=80
 
       - PORT=80

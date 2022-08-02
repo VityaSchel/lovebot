@@ -23,7 +23,7 @@ const SubscriptionCancellation = () => {
             <div className={styles.iconContainer}>
               <span className={styles.icon}>
                 <Logo />
-              </span><h1>ПранкБот</h1>
+              </span><h1>ЛавБот</h1>
             </div>
           </div>
           <div className={styles.info}>
