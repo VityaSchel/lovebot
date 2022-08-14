@@ -135,9 +135,9 @@ export default function SubscriptionPaymentPage(props: any) {
                 тарифам
               </a>
             </Link> составит
-              1 рублей за получение пробного журнала. В дальнейшем, <b>через 6 часов после получения пробного журнала,
-              списывается 3290 рублей за каждый месяц использования сервиса</b>. В случае нехватки средств, мы переведем
-              вас на тариф со списаниями по <b>1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые
+              1 рублей за получение пробного доступа. В дальнейшем, <b>через 6 часов после получения пробного доступа,
+              списывается 1490 рублей за каждый месяц использования сервиса</b>. В случае нехватки средств, мы переведем
+              вас на тариф со списаниями по <b>890 руб каждые две недели, по 490 руб каждую неделю и 190 руб за каждые
               сутки</b>.
             </Checkbox>}
             <div>
@@ -185,7 +185,7 @@ export default function SubscriptionPaymentPage(props: any) {
     return (
       <div className={styles.form}>
         <div className={[styles.heading, styles.decorationLine].join(' ')}>
-          <h1>Оплата подписки</h1>
+          <h1>Оплата счета</h1>
           <div className={styles.iconContainer}>
           <span className={styles.icon}>
             {props.icon}
@@ -202,7 +202,7 @@ export default function SubscriptionPaymentPage(props: any) {
                   <ShieldIcon />
                   <span>Безопасная оплата</span>
                 </div>
-                <h2>Попробуй подписку всего за</h2>
+                <h2>Попробуй всего за</h2>
                 <div className={styles.price}>
                   <span className={styles.number}>{amount}</span>
                   <span className={styles.label}>{declOfRoubles(amount)}</span>
@@ -210,7 +210,7 @@ export default function SubscriptionPaymentPage(props: any) {
                 <span className={styles.insteadOfPrice}>вместо <span
                   className={styles.strikethrough}>{amountWithoutDiscount} ₽</span></span>
                 <Form subscription={props.subscription} />
-                <span className={styles.footer}>{amount} ₽ первый месяц, далее {amountWithoutDiscount} ₽</span>
+                {/*<span className={styles.footer}>{amount} ₽ первый месяц, далее {amountWithoutDiscount} ₽</span>*/}
               </>
           }
         </div>
