@@ -108,3 +108,23 @@ export const paymentUnsubscribe = async (props: paymentUnsubscribeProps) => {
     return catchError(error)
   }
 }
+
+
+type CompanyStatusResponse = {
+  id: number
+  status: string
+}
+
+export async function isCompanyActive(companyID: number): Promise<boolean> {
+  try {
+    const query = `/advertising_company/${companyID}`
+    const response = await api.get(query)
+    const data: CompanyStatusResponse = response.data
+    if (response.status !== 200) throw new Error('Couldn\'t fetch ' + query)
+    return data.status === 'active'
+  } catch (error: any) {
+    catchError(error)
+    return false
+  }
+}
+
