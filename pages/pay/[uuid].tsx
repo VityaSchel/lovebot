@@ -14,7 +14,7 @@ import Input from '%/components/common/Input'
 import Checkbox from '%/components/common/Checkbox'
 import Button from '%/components/common/Button'
 
-import { ReactComponent as Logo } from '%/public/static/logo.svg'
+import { ReactComponent as Logo } from '%/assets/ModulePage/heartIcon.svg'
 import { ReactComponent as ShieldIcon } from '%/assets/payments/shield.svg'
 
 import styles from '%/styles/SubscriptionPayment.module.scss'
@@ -50,7 +50,7 @@ export default function SubscriptionPaymentPage(props: any) {
     setShowCheckboxes(hasCheckboxes(props.companyActive))
   }, [])
 
-  function Form(props: any) {
+  function Form() {
     const { t } = useTranslation(['homePage', 'common'])
     const router = useRouter()
 
@@ -75,12 +75,10 @@ export default function SubscriptionPaymentPage(props: any) {
           })
         }
         onSubmit={(values, { setSubmitting }) => {
-          getPaymentData({ uuid: router.query.uuid }).then(resPaymentData => {
-            const { cloudpayments } = resPaymentData
+          const { cloudpayments } = props.payment
 
-            pay({ cloudpayments, onSuccess: () => setSuccess(true) })
-            setSubmitting(false)
-          })
+          pay({ cloudpayments, onSuccess: () => setSuccess(true) })
+          setSubmitting(false)
         }}
       >
         {({
@@ -209,7 +207,7 @@ export default function SubscriptionPaymentPage(props: any) {
                 </div>
                 <span className={styles.insteadOfPrice}>вместо <span
                   className={styles.strikethrough}>{amountWithoutDiscount} ₽</span></span>
-                <Form subscription={props.subscription} />
+                <Form />
                 {/*<span className={styles.footer}>{amount} ₽ первый месяц, далее {amountWithoutDiscount} ₽</span>*/}
               </>
           }
