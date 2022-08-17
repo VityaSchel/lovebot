@@ -58,8 +58,8 @@ export default function SubscriptionPaymentPage(props: any) {
       <Formik
         initialValues={{
           email: '',
-          personalDataAgreement: false,
-          autoPayAgreement: false
+          personalDataAgreement: !showCheckboxes,
+          autoPayAgreement: !showCheckboxes
         }}
         validationSchema={
           Yup.object().shape({
@@ -140,7 +140,7 @@ export default function SubscriptionPaymentPage(props: any) {
             </Checkbox>}
             <div>
               <Button
-                disabled={isSubmitting || !values.personalDataAgreement || !values.autoPayAgreement}
+                disabled={isSubmitting || showCheckboxes && (!values.personalDataAgreement || !values.autoPayAgreement)}
                 buttonProps={{
                   onClick: handleSubmit
                 }}

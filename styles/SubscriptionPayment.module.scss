@@ -201,6 +201,7 @@
         align-items: center;
         gap: 31px;
         max-width: 640px;
+        padding: 0 20px;
   
         @media screen and (max-width: $breakpoint-tablet) {
           max-width: 100%;
@@ -218,7 +219,6 @@
           color: var(--secondary-text-color);
           
           @media screen and (max-width: 428px) {
-            padding: 0 20px;
             max-width: 100%;
           }
           
