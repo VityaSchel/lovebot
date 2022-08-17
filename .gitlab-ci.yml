@@ -2,27 +2,56 @@ stages:
   - build
   - deploy
 
+image: docker:20.10.16
+variables:
+  DOCKER_BUILDKIT: 1
+
+.docker_init_template:
+  - docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_REGISTRY
+
+.ssh_init_template:
+  - mkdir -p ~/.ssh
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - chmod 700 ~/.ssh
+  - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+  - eval $(ssh-agent -s)
+  - ssh-add ~/.ssh/id_rsa
+
 build:
   stage: build
-  image:
-    name: docker:19.03.12
   services:
-    - name: docker:19.03.12-dind
-      alias: dockerdaemon
-  variables:
-    DOCKER_HOST: tcp://dockerdaemon:2375/
-    DOCKER_DRIVER: overlay2
-    DOCKER_TLS_CERTDIR: ""
+    - name: docker:20.10.16-dind
+      command: ["--registry-mirror", "https://proxy-registry.skidstor.com"]
+  before_script:
+    - !reference [ .docker_init_template ]
   script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
-    - docker build -f Dockerfile -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME" .
-    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
+    - >
+      docker build
+      -f Dockerfile
+      --cache-from $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --tag $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME
+      .
 
-deploy:
+    - docker push $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME
+
+deploy-loverbotxyz:
   stage: deploy
-  image: williamyeh/ansible:ubuntu18.04-onbuild
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
+  environment:
+    name: deploy-loverbotxyz
   variables:
-    ANSIBLE_HOST_KEY_CHECKING: "False"
-  script: ansible-playbook -i "$ANSIBLE_INVENTORY" ./deploy/playbook.yml
+    COMPOSE_PROJECT_NAME: loverbotxyz
+    DOCKER_HOST: $DEPLOY_PROD_DOCKER_HOST
+    VIRTUAL_HOST: loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: api.loverbot.xyz
+  before_script:
+    - !reference [ .ssh_init_template ]
+    - !reference [ .docker_init_template ]
+  script:
+    - docker compose pull main_page
+
+    - docker compose up -d --wait
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
