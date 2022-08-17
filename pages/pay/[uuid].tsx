@@ -7,7 +7,7 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 import Cookies from 'js-cookie'
 
-import { declOfRoubles, getPaymentAmount, getPaymentData, isCompanyActive, pay } from '%/utils'
+import { declOfRoubles, getPaymentAmount, getPaymentData, getPaymentInfo, isCompanyActive, pay } from '%/utils'
 
 import Heading from '%/components/common/Heading'
 import Input from '%/components/common/Input'
@@ -75,10 +75,14 @@ export default function SubscriptionPaymentPage(props: any) {
           })
         }
         onSubmit={(values, { setSubmitting }) => {
-          const { cloudpayments } = props.payment
+          getPaymentInfo({ email: values.email, uuid: router.query.uuid }).then(resPaymentInfo => {
+            getPaymentData({ uuid: router.query.uuid }).then(resPaymentData => {
+              const { cloudpayments } = resPaymentData
 
-          pay({ cloudpayments, onSuccess: () => setSuccess(true) })
-          setSubmitting(false)
+              pay({ cloudpayments, onSuccess: () => setSuccess(true) })
+              setSubmitting(false)
+            })
+          })
         }}
       >
         {({
@@ -244,12 +248,9 @@ export async function getServerSideProps(context: any) {
     return errorRedirect()
   }
 
-  const [amountData, paymentData] = await Promise.all([
-    getPaymentAmount({ uuid: uuid }),
-    getPaymentData({ uuid: uuid })
-  ])
+  const amountData = await getPaymentAmount({ uuid: uuid })
 
-  if (!amountData || !paymentData) {
+  if (!amountData) {
     return errorRedirect()
   }
 
@@ -271,7 +272,6 @@ export async function getServerSideProps(context: any) {
       fallback: true,
       amount: amountData.amount,
       amountWithoutDiscount: amountData.amountWithoutDiscount,
-      payment: paymentData,
       ...(await serverSideTranslations(context.locale, ['common', 'homePage']))
     }
   }
