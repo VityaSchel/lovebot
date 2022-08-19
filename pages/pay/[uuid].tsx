@@ -7,7 +7,15 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 import Cookies from 'js-cookie'
 
-import { declOfRoubles, getPaymentAmount, getPaymentData, getPaymentInfo, isCompanyActive, pay } from '%/utils'
+import {
+  configLinks,
+  declOfRoubles,
+  getPaymentAmount,
+  getPaymentData,
+  getPaymentInfo,
+  isCompanyActive,
+  pay
+} from '%/utils'
 
 import Heading from '%/components/common/Heading'
 import Input from '%/components/common/Input'
@@ -113,11 +121,11 @@ export default function SubscriptionPaymentPage(props: any) {
               longLabel
             >
               Согласен с политикой обработки персональных данных, правилами предоставления услуг по подписке, <Link
-              href='/static/tarifes.pdf'>
+              href={configLinks.tarifes}>
               <a target='_blank' className={styles.termsLink}>
                 офертой рекуррентных платежей
               </a>
-            </Link>, <Link href='/static/tarifes.pdf'>
+            </Link>, <Link href={configLinks.user_agreement}>
               <a target='_blank' className={styles.termsLink}>
                 договором-офертой и условиями использования
               </a>
@@ -132,7 +140,7 @@ export default function SubscriptionPaymentPage(props: any) {
               longLabel
             >
               Я согласен подключить <b>автоматические</b> платежи по подписке. Сумма списаний согласно <Link
-              href='/static/tarifes.pdf'>
+              href={configLinks.tarifes}>
               <a target='_blank' className={styles.termsLink}>
                 тарифам
               </a>
