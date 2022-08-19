@@ -15,6 +15,7 @@ import { ReactComponent as MirLogo } from '%/assets/payments/logos/mir.svg'
 import { ReactComponent as MastercardLogo } from '%/assets/payments/logos/mastercard.svg'
 
 import styles from '../styles/Module.module.scss'
+import { configLinks } from '%/utils'
 
 
 export default function ModulePage() {
@@ -100,11 +101,10 @@ function Form(props: FormProps) {
           <span>ОГРНИП: 322100000008640</span>
         </div>
         <div className={styles.links}>
-          {/*<Link href='/static/data_policy.pdf'><a>Политика конфиденциальности</a></Link>*/}
-          <Link href='/static/user_agreement.pdf'><a target='_blank'>Пользовательское соглашение</a></Link>
-          <Link href='/static/data_policy.pdf'><a target='_blank'>Политика обработки данных</a></Link>
+          <Link href={configLinks.user_agreement}><a target='_blank'>Пользовательское соглашение</a></Link>
+          <Link href={configLinks.data_policy}><a target='_blank'>Политика обработки данных</a></Link>
           <Link href='/subscription-cancellation'><a>Отмена подписки</a></Link>
-          <Link href='/static/tarifes.pdf'><a target='_blank'>Тарифы</a></Link>
+          <Link href={configLinks.tarifes}><a target='_blank'>Тарифы</a></Link>
         </div>
       </footer>
     </div>
