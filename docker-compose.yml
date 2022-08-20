@@ -5,7 +5,7 @@ services:
     image: registry.skidstor.com/lovebot1/main_page:main
     restart: unless-stopped
     networks:
-      nginx-proxy: { }
+      nginx-proxy: {}
     expose:
       - "80"
     environment:

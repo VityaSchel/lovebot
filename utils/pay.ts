@@ -19,7 +19,7 @@ export function pay(props: payProps) {
         onSuccess: function(options: any) {
           // действие при успешной оплате
           // Router.push('/success')
-          onSuccess()
+         // onSuccess()
         },
         onFail: function(reason: any, options: any) {
           // действие при неуспешной оплате
