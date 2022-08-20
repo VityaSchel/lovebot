@@ -18,7 +18,7 @@ export function pay(props: payProps) {
       {
         onSuccess: function(options: any) {
           // действие при успешной оплате
-          Router.push('/success')
+          Router.push('https://vk.com/love_boting')
          // onSuccess()
         },
         onFail: function(reason: any, options: any) {

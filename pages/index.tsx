@@ -35,7 +35,7 @@ export default function ModulePage() {
             amount: 1,
             amountWithoutDiscount: 1490
           }}
-          link='vk.com/public215273570'
+          link='vk.com/love_boting'
         />
       </main>
     </>
