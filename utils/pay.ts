@@ -1,4 +1,4 @@
-// import Router from 'next/router'
+import Router from 'next/router'
 
 type payProps = {
   cloudpayments: any,
@@ -18,7 +18,7 @@ export function pay(props: payProps) {
       {
         onSuccess: function(options: any) {
           // действие при успешной оплате
-          // Router.push('/success')
+          Router.push('/success')
          // onSuccess()
         },
         onFail: function(reason: any, options: any) {
