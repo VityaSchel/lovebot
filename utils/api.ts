@@ -19,7 +19,7 @@ export const catchError = (error: AxiosError) => {
   }
 }
 
-const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://api.loverbot.xyz'
+const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL
 let accessToken = ''
 
 export const api = axios.create({
