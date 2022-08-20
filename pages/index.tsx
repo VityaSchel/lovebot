@@ -99,6 +99,7 @@ function Form(props: FormProps) {
           <span>ИП Деревлев Александр Генадьевич</span>
           <span>ИНН: 101601117953</span>
           <span>ОГРНИП: 322100000008640</span>
+          <span>EMAIL: loverbot.xyz@proton.me</span>
         </div>
         <div className={styles.links}>
           <Link href={configLinks.user_agreement}><a target='_blank'>Пользовательское соглашение</a></Link>
