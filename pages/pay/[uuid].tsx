@@ -125,7 +125,7 @@ export default function SubscriptionPaymentPage(props: any) {
               <a target='_blank' className={styles.termsLink}>
                 офертой рекуррентных платежей
               </a>
-            </Link>, <Link href={configLinks.user_agreement}>
+            </Link>, <Link href={configLinks.userAgreement}>
               <a target='_blank' className={styles.termsLink}>
                 договором-офертой и условиями использования
               </a>

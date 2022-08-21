@@ -1,4 +1,5 @@
 stages:
+  - setup
   - build
   - deploy
 
@@ -19,39 +20,114 @@ variables:
   - eval $(ssh-agent -s)
   - ssh-add ~/.ssh/id_rsa
 
-build:
+install:
+  stage: setup
+  services:
+    - name: docker:20.10.16-dind
+      command: ["--registry-mirror", "https://proxy-registry.skidstor.com"]
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      paths:
+        - node_modules
+      policy: pull-push
+  before_script:
+    - !reference [.docker_init_template]
+  script:
+    - mkdir -p node_modules
+
+    - >
+      docker build
+      --file docker/node/Dockerfile
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --cache-from $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-install
+      --target install
+      --tag $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-install
+      .
+
+    - docker create --name node $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-install
+    - docker cp node:/app/node_modules $CI_PROJECT_DIR/node
+
+    - docker push $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-install
+
+.build_template:
   stage: build
   services:
     - name: docker:20.10.16-dind
       command: ["--registry-mirror", "https://proxy-registry.skidstor.com"]
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      paths:
+        - node_modules
+      policy: pull
+    - key: next-cache-${PROJECT_NAME}-${CI_COMMIT_REF_SLUG}
+      paths:
+        - .next/cache
+      policy: pull-push
+  #  variables:
+  #    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/1r8-2eCe5WuQeg
+  #    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/QkdXA0uC9keJnA
+  #    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/MMr2_pXDMYtDTw
   before_script:
-    - !reference [ .docker_init_template ]
+    - !reference [.docker_init_template]
   script:
+    - ls -al
+    - mkdir -p .next/cache
+
     - >
       docker build
-      -f Dockerfile
-      --cache-from $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME
+      --file docker/node/Dockerfile
       --build-arg BUILDKIT_INLINE_CACHE=1
-      --tag $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME
+      --cache-from $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-install
+      --cache-from $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
+      --target build
+      --tag $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
+      --build-arg NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL
+      --build-arg NEXT_PUBLIC_DATA_POLICY=$NEXT_PUBLIC_DATA_POLICY
+      --build-arg NEXT_PUBLIC_TARIFES=$NEXT_PUBLIC_TARIFES
+      --build-arg NEXT_PUBLIC_USER_AGREEMENT=$NEXT_PUBLIC_USER_AGREEMENT
+      --build-arg NEXT_PUBLIC_CONTACT_EMAIL=$NEXT_PUBLIC_CONTACT_EMAIL
       .
 
-    - docker push $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME
+    - docker create --name main_page $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
+    - docker cp main_page:/app/.next/cache $CI_PROJECT_DIR/.next/cache
 
-deploy-loverbotxyz:
+    - docker push $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
+
+.deploy_production_template:
   stage: deploy
   environment:
-    name: deploy-loverbotxyz
+    name: production-${PROJECT_NAME}
   variables:
-    COMPOSE_PROJECT_NAME: loverbotxyz
+    COMPOSE_PROJECT_NAME: ${PROJECT_NAME}_main_page
+    LANDING_IMAGE: $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
     DOCKER_HOST: $DEPLOY_PROD_DOCKER_HOST
-    VIRTUAL_HOST: loverbot.xyz
-    NEXT_PUBLIC_BACKEND_URL: api.loverbot.xyz
   before_script:
-    - !reference [ .ssh_init_template ]
-    - !reference [ .docker_init_template ]
+    - !reference [.ssh_init_template]
+    - !reference [.docker_init_template]
   script:
     - docker compose pull main_page
 
     - docker compose up -d --wait
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
+
+build_loverbotxyz:
+  extends: .build_template
+  variables:
+    PROJECT_NAME: promocodeclick
+    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/D7QNuWj8jTSjiw
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/FD4YT5iBREjymA
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/Vmf4mMfwzEnztQ
+    NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
+    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/love_boting
+
+deploy_production_loverbotxyz:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: loverbotxyz
+    VIRTUAL_HOST: loverbot.xyz

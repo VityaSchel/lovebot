@@ -5,6 +5,8 @@ type payProps = {
   onSuccess: any
 }
 
+const redirectAfterPayment = process.env.NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT
+
 export function pay(props: payProps) {
   try {
     // @ts-ignore
@@ -18,7 +20,7 @@ export function pay(props: payProps) {
       {
         onSuccess: function(options: any) {
           // действие при успешной оплате
-          Router.push('https://vk.me/love_boting')
+          Router.push(redirectAfterPayment)
          // onSuccess()
         },
         onFail: function(reason: any, options: any) {

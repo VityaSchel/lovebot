@@ -11,11 +11,11 @@ export default function Footer() {
 
   return (
     <footer className={cn(styles.footer)}>
-      <Link href={configLinks.user_agreement}>
+      <Link href={configLinks.userAgreement}>
         <a>{t('footer.privacyPolicy')}</a>
       </Link>
 
-      <Link href={configLinks.data_policy}>
+      <Link href={configLinks.dataPolicy}>
         <a>{t('footer.dataPolicy')}</a>
       </Link>
     </footer>
