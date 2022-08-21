@@ -35,7 +35,7 @@ export default function ModulePage() {
             amount: 1,
             amountWithoutDiscount: 1490
           }}
-          link='vk.com/love_boting'
+          link={configLinks.redirectAfterPayment}
         />
       </main>
     </>

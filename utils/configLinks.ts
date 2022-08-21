@@ -3,17 +3,20 @@ const dataPolicy = process.env.NEXT_PUBLIC_DATA_POLICY
 const tarifes = process.env.NEXT_PUBLIC_TARIFES
 const userAgreement = process.env.NEXT_PUBLIC_USER_AGREEMENT
 const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL
+const redirectAfterPayment = process.env.NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT
 
 console.log('baseURL', baseURL)
 console.log('dataPolicy', dataPolicy)
 console.log('tarifes', tarifes)
 console.log('userAgreement', userAgreement)
 console.log('contactEmail', contactEmail)
+console.log('redirectAfterPayment', redirectAfterPayment)
 
 export const configLinks = {
   baseURL,
   dataPolicy,
   tarifes,
   userAgreement,
-  contactEmail
+  contactEmail,
+  redirectAfterPayment
 }
