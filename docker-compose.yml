@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   main_page:
-    image: registry.skidstor.com/lovebot1/main_page:main
+    image: ${LANDING_IMAGE}
     restart: unless-stopped
     networks:
       nginx-proxy: {}
