@@ -90,6 +90,7 @@ install:
       --build-arg NEXT_PUBLIC_TARIFES=$NEXT_PUBLIC_TARIFES
       --build-arg NEXT_PUBLIC_USER_AGREEMENT=$NEXT_PUBLIC_USER_AGREEMENT
       --build-arg NEXT_PUBLIC_CONTACT_EMAIL=$NEXT_PUBLIC_CONTACT_EMAIL
+      --build-arg NEXT_PUBLIC_BOT_LINK=$NEXT_PUBLIC_BOT_LINK
       --build-arg NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT=$NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT
 
       .
@@ -126,6 +127,7 @@ build_loverbotxyz:
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/FD4YT5iBREjymA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/Vmf4mMfwzEnztQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
+    NEXT_PUBLIC_BOT_LINK: https://vk.com/love_boting
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love_boting
 
 build_payloverbotxyz:
@@ -137,6 +139,7 @@ build_payloverbotxyz:
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/FD4YT5iBREjymA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/Vmf4mMfwzEnztQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
+    NEXT_PUBLIC_BOT_LINK: https://vk.com/love____bot
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love____bot
 
 deploy_production_loverbotxyz:

@@ -35,7 +35,7 @@ export default function ModulePage() {
             amount: 1,
             amountWithoutDiscount: 1490
           }}
-          link={configLinks.redirectAfterPayment}
+          link={configLinks.botLink}
         />
       </main>
     </>
