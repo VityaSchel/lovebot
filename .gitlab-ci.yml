@@ -122,9 +122,9 @@ build_loverbotxyz:
   variables:
     PROJECT_NAME: loverbotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/D7QNuWj8jTSjiw
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/FD4YT5iBREjymA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/Vmf4mMfwzEnztQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/RqF9W6SnAzWXTw
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/cC3KJKjkakQxOg
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/SJdrU5VCz1LBNQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: https://vk.com/love_boting
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love_boting
@@ -134,9 +134,9 @@ build_payloverbotxyz:
   variables:
     PROJECT_NAME: payloverbotxyz
     NEXT_PUBLIC_BACKEND_URL: https://apipay.loverbot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/D7QNuWj8jTSjiw
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/FD4YT5iBREjymA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/Vmf4mMfwzEnztQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/RqF9W6SnAzWXTw
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/cC3KJKjkakQxOg
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/SJdrU5VCz1LBNQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: https://vk.com/love____bot
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love____bot
