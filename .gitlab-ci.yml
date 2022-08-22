@@ -126,8 +126,8 @@ build_loverbotxyz:
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/cC3KJKjkakQxOg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/SJdrU5VCz1LBNQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
-    NEXT_PUBLIC_BOT_LINK: https://vk.com/love_boting
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love_boting
+    NEXT_PUBLIC_BOT_LINK: https://vk.com/love____bot1
+    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love____bot1
 
 build_payloverbotxyz:
   extends: .build_template
