@@ -144,6 +144,19 @@ build_payloverbotxyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love____bot
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 1990 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1090 руб каждые две недели, по 590 руб каждую неделю и 190 руб за каждые сутки.
 
+build_healthyeatinglive:
+  extends: .build_template
+  variables:
+    PROJECT_NAME: healthyeatinglive
+    NEXT_PUBLIC_BACKEND_URL: https://pay.healthyeating.live
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/d/EdydKBvu92YaQA
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/KwXvd6da3oGspA
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/nYsZV9j8vMn21g
+    NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
+    NEXT_PUBLIC_BOT_LINK: https://vk.com/love____bot2
+    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love____bot2
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
+
 deploy_production_loverbotxyz:
   extends: .deploy_production_template
   variables:
@@ -155,3 +168,9 @@ deploy_production_payloverbotxyz:
   variables:
     PROJECT_NAME: payloverbotxyz
     VIRTUAL_HOST: pay.loverbot.xyz
+
+deploy_production_healthyeatinglive:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: healthyeatinglive
+    VIRTUAL_HOST: healthyeating.live
