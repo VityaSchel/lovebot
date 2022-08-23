@@ -151,7 +151,7 @@ build_healthyeatinglive:
   extends: .build_template
   variables:
     PROJECT_NAME: healthyeatinglive
-    NEXT_PUBLIC_BACKEND_URL: https://pay.healthyeating.live
+    NEXT_PUBLIC_BACKEND_URL: https://api.healthyeating.live
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/d/EdydKBvu92YaQA
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/KwXvd6da3oGspA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/nYsZV9j8vMn21g
