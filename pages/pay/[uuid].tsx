@@ -213,8 +213,8 @@ export default function SubscriptionPaymentPage(props: any) {
                   <span className={styles.number}>{amount}</span>
                   <span className={styles.label}>{declOfRoubles(amount)}</span>
                 </div>
-                <span className={styles.insteadOfPrice}>вместо <span
-                  className={styles.strikethrough}>{amountWithoutDiscount} ₽</span></span>
+                {/*<span className={styles.insteadOfPrice}>вместо <span*/}
+                {/*  className={styles.strikethrough}>{amountWithoutDiscount} ₽</span></span>*/}
                 <Form />
                 {/*<span className={styles.footer}>{amount} ₽ первый месяц, далее {amountWithoutDiscount} ₽</span>*/}
               </>
