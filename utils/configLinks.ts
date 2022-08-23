@@ -6,6 +6,7 @@ const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL
 const botLink = process.env.NEXT_PUBLIC_BOT_LINK
 const redirectAfterPayment = process.env.NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT
 const textSecondCheckbox = process.env.NEXT_PUBLIC_TEXT_SECOND_CHECKBOX
+const mainPageTextSubscriptionPrices = process.env.NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES
 
 console.log('baseURL', baseURL)
 console.log('dataPolicy', dataPolicy)
@@ -15,6 +16,7 @@ console.log('contactEmail', contactEmail)
 console.log('botLink', botLink)
 console.log('redirectAfterPayment', redirectAfterPayment)
 console.log('textSecondCheckbox', textSecondCheckbox)
+console.log('mainPageTextSubscriptionPrices', mainPageTextSubscriptionPrices)
 
 export const configLinks = {
   baseURL,
@@ -24,5 +26,6 @@ export const configLinks = {
   contactEmail,
   botLink,
   redirectAfterPayment,
-  textSecondCheckbox
+  textSecondCheckbox,
+  mainPageTextSubscriptionPrices
 }

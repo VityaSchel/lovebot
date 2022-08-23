@@ -73,7 +73,7 @@ function Form(props: FormProps) {
       <div className={styles.priceBlock}>
         <h3 className={styles.decorationLine}>Стоимость подписки <span
           className={styles.orange}>{props.module.amount} ₽</span> в первые 6 часов</h3>
-        <p>Далее {props.module.amountWithoutDiscount} ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 890 руб. за 2 недели, либо 490 руб. за неделю, либо 190 руб. за день использования подписки.</p>
+        <p>{configLinks.mainPageTextSubscriptionPrices}</p>
       </div>
       <div className={styles.methodsBlock}>
         <h3 className={styles.decorationLine}>Методы оплаты</h3>
