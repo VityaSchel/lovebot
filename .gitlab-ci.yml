@@ -92,6 +92,7 @@ install:
       --build-arg NEXT_PUBLIC_CONTACT_EMAIL=$NEXT_PUBLIC_CONTACT_EMAIL
       --build-arg NEXT_PUBLIC_BOT_LINK=$NEXT_PUBLIC_BOT_LINK
       --build-arg NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT=$NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT
+      --build-arg NEXT_PUBLIC_TEXT_SECOND_CHECKBOX="$NEXT_PUBLIC_TEXT_SECOND_CHECKBOX"
       .
 
     - docker create --name main_page $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
@@ -128,6 +129,7 @@ build_loverbotxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: https://vk.com/love____bot1
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love____bot1
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 1990 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1090 руб каждые две недели, по 590 руб каждую неделю и 190 руб за каждые сутки.
 
 build_payloverbotxyz:
   extends: .build_template
@@ -140,6 +142,7 @@ build_payloverbotxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: https://vk.com/love____bot
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love____bot
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 1990 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1090 руб каждые две недели, по 590 руб каждую неделю и 190 руб за каждые сутки.
 
 deploy_production_loverbotxyz:
   extends: .deploy_production_template
