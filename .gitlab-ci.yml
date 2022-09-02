@@ -276,6 +276,34 @@ build_paylovebot1xyz:
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
 
+build_loverbotingxyz:
+  extends: .build_template
+  variables:
+    PROJECT_NAME: loverbotingxyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.lover-boting.xyz
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
+    NEXT_PUBLIC_BOT_LINK: https://vk.com/ibotprobiv
+    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/ibotprobiv
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+
+build_love-bot-vkxyz:
+  extends: .build_template
+  variables:
+    PROJECT_NAME: love-bot-vkxyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.love-bot-vk.xyz
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
+    NEXT_PUBLIC_BOT_LINK: https://vk.com/ibotprobiv
+    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/ibotprobiv
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+
 deploy_production_loverbotxyz:
   extends: .deploy_production_template
   variables:
@@ -341,3 +369,15 @@ deploy_production_paylovebot1xyz:
   variables:
     PROJECT_NAME: paylovebot1xyz
     VIRTUAL_HOST: paylovebot1.xyz
+
+deploy_production_loverbotingxyz:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: loverbotingxyz
+    VIRTUAL_HOST: lover-boting.xyz
+
+deploy_production_love-bot-vkxyz:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: love-bot-vkxyz
+    VIRTUAL_HOST: love-bot-vk.xyz
