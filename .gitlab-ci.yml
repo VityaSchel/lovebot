@@ -333,3 +333,9 @@ deploy_production_paylovebotxyz:
   variables:
     PROJECT_NAME: paylovebotxyz
     VIRTUAL_HOST: paylovebot.xyz
+
+deploy_production_paylovebot1xyz:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: paylovebot1xyz
+    VIRTUAL_HOST: paylovebot1.xyz
