@@ -94,6 +94,9 @@ install:
       --build-arg NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT=$NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT
       --build-arg NEXT_PUBLIC_TEXT_SECOND_CHECKBOX="$NEXT_PUBLIC_TEXT_SECOND_CHECKBOX"
       --build-arg NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES="$NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES"
+      --build-arg NEXT_PUBLIC_COMPANY_NAME="$NEXT_PUBLIC_COMPANY_NAME"
+      --build-arg NEXT_PUBLIC_COMPANY_INN=$NEXT_PUBLIC_COMPANY_INN
+      --build-arg NEXT_PUBLIC_COMPANY_OGRNIP=$NEXT_PUBLIC_COMPANY_OGRNIP
       .
 
     - docker create --name main_page $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
@@ -132,6 +135,9 @@ build_loverbotxyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/love____bot1
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+    NEXT_PUBLIC_COMPANY_INN: 101601117953
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 build_payloverbotxyz:
   extends: .build_template
@@ -146,6 +152,9 @@ build_payloverbotxyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/bot_probivshik
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+    NEXT_PUBLIC_COMPANY_INN: 101601117953
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 build_healthyeatinglive:
   extends: .build_template
@@ -160,6 +169,9 @@ build_healthyeatinglive:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/probivator
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+    NEXT_PUBLIC_COMPANY_INN: 101601117953
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 build_dietaquest:
   extends: .build_template
@@ -174,6 +186,9 @@ build_dietaquest:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/botprobiv
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+    NEXT_PUBLIC_COMPANY_INN: 101601117953
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 build_lovebotinfo:
   extends: .build_template
@@ -188,6 +203,9 @@ build_lovebotinfo:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/public215584161
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+    NEXT_PUBLIC_COMPANY_INN: 101601117953
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 build_xlovebotxyz:
   extends: .build_template
@@ -202,6 +220,9 @@ build_xlovebotxyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/public215584161
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+    NEXT_PUBLIC_COMPANY_INN: 101601117953
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 build_pay-love-botxyz:
   extends: .build_template
@@ -216,6 +237,9 @@ build_pay-love-botxyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/public215584161
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+    NEXT_PUBLIC_COMPANY_INN: 101601117953
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 #https://vk.com/neff001
 build_loverbotpayxyz:
@@ -231,6 +255,9 @@ build_loverbotpayxyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/bot_probivshik
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+    NEXT_PUBLIC_COMPANY_INN: 101601117953
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 #@secretkey19
 build_lovebotvkxyz:
@@ -246,6 +273,9 @@ build_lovebotvkxyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/botprobiv
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+    NEXT_PUBLIC_COMPANY_INN: 101601117953
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 #@vk_pr
 build_paylovebotxyz:
@@ -261,6 +291,9 @@ build_paylovebotxyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/ibotprobiv
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+    NEXT_PUBLIC_COMPANY_INN: 101601117953
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 build_paylovebot1xyz:
   extends: .build_template
@@ -275,6 +308,9 @@ build_paylovebot1xyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/ibotprobiv
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
+    NEXT_PUBLIC_COMPANY_INN: 190901248906
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
 
 build_loverbotingxyz:
   extends: .build_template
@@ -289,6 +325,9 @@ build_loverbotingxyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/ibotprobiv
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
+    NEXT_PUBLIC_COMPANY_INN: 190901248906
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
 
 build_love-bot-vkxyz:
   extends: .build_template
@@ -303,6 +342,9 @@ build_love-bot-vkxyz:
     NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/ibotprobiv
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
+    NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
+    NEXT_PUBLIC_COMPANY_INN: 190901248906
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
 
 deploy_production_loverbotxyz:
   extends: .deploy_production_template

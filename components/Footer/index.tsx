@@ -2,7 +2,7 @@ import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import cn from 'classnames'
 
-import { configLinks } from '%/utils'
+import { config } from '%/utils'
 
 import styles from './styles.module.scss'
 
@@ -11,11 +11,11 @@ export default function Footer() {
 
   return (
     <footer className={cn(styles.footer)}>
-      <Link href={configLinks.userAgreement}>
+      <Link href={config.userAgreement}>
         <a>{t('footer.privacyPolicy')}</a>
       </Link>
 
-      <Link href={configLinks.dataPolicy}>
+      <Link href={config.dataPolicy}>
         <a>{t('footer.dataPolicy')}</a>
       </Link>
     </footer>

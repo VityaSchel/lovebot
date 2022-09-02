@@ -8,7 +8,7 @@ import * as Yup from 'yup'
 import Cookies from 'js-cookie'
 
 import {
-  configLinks,
+  config,
   declOfRoubles,
   getPaymentAmount,
   getPaymentData,
@@ -121,11 +121,11 @@ export default function SubscriptionPaymentPage(props: any) {
               longLabel
             >
               Согласен с политикой обработки персональных данных, правилами предоставления услуг по подписке, <Link
-              href={configLinks.tarifes}>
+              href={config.tarifes}>
               <a target='_blank' className={styles.termsLink}>
                 офертой рекуррентных платежей
               </a>
-            </Link>, <Link href={configLinks.userAgreement}>
+            </Link>, <Link href={config.userAgreement}>
               <a target='_blank' className={styles.termsLink}>
                 договором-офертой и условиями использования
               </a>
@@ -140,11 +140,11 @@ export default function SubscriptionPaymentPage(props: any) {
               longLabel
             >
               Я согласен подключить автоматические платежи по подписке. Сумма списаний согласно <Link
-              href={configLinks.tarifes}>
+              href={config.tarifes}>
               <a target='_blank' className={styles.termsLink}>
                 тарифам
               </a>
-            </Link> составит {configLinks.textSecondCheckbox}
+            </Link> составит {config.textSecondCheckbox}
             </Checkbox>}
             <div>
               <Button

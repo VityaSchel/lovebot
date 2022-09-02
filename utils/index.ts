@@ -1,4 +1,4 @@
 export * from './api'
 export * from './pay'
 export * from './math'
-export * from './configLinks'
+export * from './config'

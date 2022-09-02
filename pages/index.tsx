@@ -15,7 +15,7 @@ import { ReactComponent as MirLogo } from '%/assets/payments/logos/mir.svg'
 import { ReactComponent as MastercardLogo } from '%/assets/payments/logos/mastercard.svg'
 
 import styles from '../styles/Module.module.scss'
-import { configLinks } from '%/utils'
+import { config } from '%/utils'
 
 
 export default function ModulePage() {
@@ -35,7 +35,7 @@ export default function ModulePage() {
             amount: 1,
             amountWithoutDiscount: 1990
           }}
-          link={configLinks.botLink}
+          link={config.botLink}
         />
       </main>
     </>
@@ -73,7 +73,7 @@ function Form(props: FormProps) {
       <div className={styles.priceBlock}>
         <h3 className={styles.decorationLine}>Стоимость подписки <span
           className={styles.orange}>{props.module.amount} ₽</span> в первые 6 часов</h3>
-        <p>{configLinks.mainPageTextSubscriptionPrices}</p>
+        <p>{config.mainPageTextSubscriptionPrices}</p>
       </div>
       <div className={styles.methodsBlock}>
         <h3 className={styles.decorationLine}>Методы оплаты</h3>
@@ -96,16 +96,16 @@ function Form(props: FormProps) {
       </div>
       <footer>
         <div className={styles.top}>
-          <span>ИП Деревлев Александр Генадьевич</span>
-          <span>ИНН: 101601117953</span>
-          <span>ОГРНИП: 322100000008640</span>
-          <span>EMAIL: {configLinks.contactEmail}</span>
+          <span>{config.companyName}</span>
+          <span>ИНН: {config.companyInn}</span>
+          <span>ОГРНИП: {config.companyOgrnip}</span>
+          <span>EMAIL: {config.contactEmail}</span>
         </div>
         <div className={styles.links}>
-          <Link href={configLinks.userAgreement}><a target='_blank'>Пользовательское соглашение</a></Link>
-          <Link href={configLinks.dataPolicy}><a target='_blank'>Политика обработки данных</a></Link>
+          <Link href={config.userAgreement}><a target='_blank'>Пользовательское соглашение</a></Link>
+          <Link href={config.dataPolicy}><a target='_blank'>Политика обработки данных</a></Link>
           <Link href='/subscription-cancellation'><a>Отмена подписки</a></Link>
-          <Link href={configLinks.tarifes}><a target='_blank'>Тарифы</a></Link>
+          <Link href={config.tarifes}><a target='_blank'>Тарифы</a></Link>
         </div>
       </footer>
     </div>
