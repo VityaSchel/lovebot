@@ -67,10 +67,6 @@ install:
       paths:
         - .next/cache
       policy: pull-push
-  #  variables:
-  #    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/1r8-2eCe5WuQeg
-  #    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/QkdXA0uC9keJnA
-  #    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/MMr2_pXDMYtDTw
   before_script:
     - !reference [.docker_init_template]
   script:
@@ -349,11 +345,11 @@ deploy_production_loverbotxyz:
     PROJECT_NAME: loverbotxyz
     VIRTUAL_HOST: loverbot.xyz
 
-deploy_production_payloverbotxyz:
-  extends: .deploy_production_template
-  variables:
-    PROJECT_NAME: payloverbotxyz
-    VIRTUAL_HOST: pay.loverbot.xyz
+#deploy_production_payloverbotxyz:
+#  extends: .deploy_production_template
+#  variables:
+#    PROJECT_NAME: payloverbotxyz
+#    VIRTUAL_HOST: pay.loverbot.xyz
 
 deploy_production_healthyeatinglive:
   extends: .deploy_production_template
