@@ -135,28 +135,11 @@ build_loverbotxyz:
     NEXT_PUBLIC_COMPANY_INN: 101601117953
     NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
-#build_payloverbotxyz:
-#  extends: .build_template
-#  variables:
-#    PROJECT_NAME: payloverbotxyz
-#    NEXT_PUBLIC_BACKEND_URL: https://apipay.loverbot.xyz
-#    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-#    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
-#    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
-#    NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
-#    NEXT_PUBLIC_BOT_LINK: https://vk.com/bot_probivshik
-#    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.me/bot_probivshik
-#    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 10 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю и 190 руб за каждые сутки.
-#    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, либо 890 руб. за неделю, либо 190 руб. за день использования подписки.
-#    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
-#    NEXT_PUBLIC_COMPANY_INN: 101601117953
-#    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
-
 build_healthyeatinglive:
   extends: .build_template
   variables:
     PROJECT_NAME: healthyeatinglive
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.healthyeating.live
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -173,7 +156,7 @@ build_dietaquest:
   extends: .build_template
   variables:
     PROJECT_NAME: dietaquest
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.dieta.quest
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -190,7 +173,7 @@ build_lovebotinfo:
   extends: .build_template
   variables:
     PROJECT_NAME: lovebotinfo
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovebot.info
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -207,7 +190,7 @@ build_xlovebotxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: xlovebotxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -224,7 +207,7 @@ build_pay-love-botxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: pay-love-botxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -241,7 +224,7 @@ build_loverbotpayxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: loverbotpayxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -258,7 +241,7 @@ build_lovebotvkxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: lovebotvkxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -275,7 +258,7 @@ build_paylovebotxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: paylovebotxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -292,7 +275,7 @@ build_paylovebot1xyz:
   extends: .build_template
   variables:
     PROJECT_NAME: paylovebot1xyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -309,7 +292,7 @@ build_loverbotingxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: loverbotingxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -326,7 +309,7 @@ build_love-bot-vkxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: love-bot-vkxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -344,12 +327,6 @@ deploy_production_loverbotxyz:
   variables:
     PROJECT_NAME: loverbotxyz
     VIRTUAL_HOST: loverbot.xyz
-
-#deploy_production_payloverbotxyz:
-#  extends: .deploy_production_template
-#  variables:
-#    PROJECT_NAME: payloverbotxyz
-#    VIRTUAL_HOST: pay.loverbot.xyz
 
 deploy_production_healthyeatinglive:
   extends: .deploy_production_template
