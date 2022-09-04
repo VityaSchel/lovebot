@@ -190,7 +190,7 @@ build_xlovebotxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: xlovebotxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -207,7 +207,7 @@ build_pay-love-botxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: pay-love-botxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -224,7 +224,7 @@ build_loverbotpayxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: loverbotpayxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -241,7 +241,7 @@ build_lovebotvkxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: lovebotvkxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -258,7 +258,7 @@ build_paylovebotxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: paylovebotxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -275,7 +275,7 @@ build_paylovebot1xyz:
   extends: .build_template
   variables:
     PROJECT_NAME: paylovebot1xyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -292,7 +292,7 @@ build_loverbotingxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: loverbotingxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
@@ -309,7 +309,7 @@ build_love-bot-vkxyz:
   extends: .build_template
   variables:
     PROJECT_NAME: love-bot-vkxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.lovebotvk.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
