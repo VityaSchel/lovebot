@@ -86,23 +86,23 @@ export const getPaymentAmount = async (props: getPaymentAmountProps) => {
   }
 }
 
-type paymentUnsubscribeProps = {
+type subscriptionUnsubscribeProps = {
   firstNumbers: string,
   lastNumbers: string
 }
 
-export const paymentUnsubscribe = async (props: paymentUnsubscribeProps) => {
+export const subscriptionUnsubscribe = async (props: subscriptionUnsubscribeProps) => {
   try {
     const { firstNumbers, lastNumbers } = props
 
-    const { data: paymentUnsubscribe } = await api.post('/subscription/unsubscribe', {
+    const { data: subscriptionUnsubscribe } = await api.post('/subscription/unsubscribe', {
       firstNumbers,
       lastNumbers
     })
 
-    console.log('paymentUnsubscribe', paymentUnsubscribe)
+    console.log('subscriptionUnsubscribe', subscriptionUnsubscribe)
 
-    return paymentUnsubscribe
+    return subscriptionUnsubscribe
   } catch (error: any) {
     return catchError(error)
   }

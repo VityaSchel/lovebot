@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next'
 import { Formik, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
-import { paymentUnsubscribe } from '%/utils'
+import { subscriptionUnsubscribe } from '%/utils'
 
 import Input from '%/components/common/Input'
 import Button from '%/components/common/Button'
@@ -33,7 +33,7 @@ export default function SubscriptionCancel() {
           card_last: Yup.number().required(t('form_errors.required'))
         })}
         onSubmit={(values, { setSubmitting }) => {
-          paymentUnsubscribe({ firstNumbers: values.card_last, lastNumbers: values.card_last }).then(unsubscribe => {
+            subscriptionUnsubscribe({ firstNumbers: values.card_last, lastNumbers: values.card_last }).then(unsubscribe => {
             console.log('unsubscribe', unsubscribe)
             if (!unsubscribe.success) {
               setError(true)
