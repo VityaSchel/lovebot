@@ -95,7 +95,7 @@ export const paymentUnsubscribe = async (props: paymentUnsubscribeProps) => {
   try {
     const { firstNumbers, lastNumbers } = props
 
-    const { data: paymentUnsubscribe } = await api.post('/payment/unsubscribe', {
+    const { data: paymentUnsubscribe } = await api.post('/subscription/unsubscribe', {
       firstNumbers,
       lastNumbers
     })
