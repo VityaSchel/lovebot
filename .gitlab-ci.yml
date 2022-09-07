@@ -124,7 +124,7 @@ build_loverbotxyz:
     PROJECT_NAME: loverbotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/SJdrU5VCz1LBNQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/probivator
@@ -141,7 +141,7 @@ build_healthyeatinglive:
     PROJECT_NAME: healthyeatinglive
     NEXT_PUBLIC_BACKEND_URL: https://api.healthyeating.live
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/probivator
@@ -158,7 +158,7 @@ build_dietaquest:
     PROJECT_NAME: dietaquest
     NEXT_PUBLIC_BACKEND_URL: https://api.dieta.quest
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/probivator
@@ -175,7 +175,7 @@ build_lovebotinfo:
     PROJECT_NAME: lovebotinfo
     NEXT_PUBLIC_BACKEND_URL: https://api.lovebot.info
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/probivator
@@ -192,7 +192,7 @@ build_xlovebotxyz:
     PROJECT_NAME: xlovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
@@ -210,7 +210,7 @@ build_pay-love-botxyz:
     PROJECT_NAME: pay-love-botxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
@@ -227,7 +227,7 @@ build_loverbotpayxyz:
     PROJECT_NAME: loverbotpayxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
@@ -244,7 +244,7 @@ build_lovebotvkxyz:
     PROJECT_NAME: lovebotvkxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
@@ -261,7 +261,7 @@ build_paylovebotxyz:
     PROJECT_NAME: paylovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
@@ -278,7 +278,7 @@ build_paylovebot1xyz:
     PROJECT_NAME: paylovebot1xyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/botprobiv
@@ -295,7 +295,7 @@ build_loverbotingxyz:
     PROJECT_NAME: loverbotingxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/botprobiv
@@ -312,7 +312,7 @@ build_love-bot-vkxyz:
     PROJECT_NAME: love-bot-vkxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/Kefrm9kP2xMnlQ
+    NEXT_PUBLIC_TARIFES: https://disk.yandex.ru/i/tEcrp0UTIrLPJg
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: loverbot.xyz@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.com/botprobiv
