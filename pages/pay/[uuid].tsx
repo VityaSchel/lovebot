@@ -12,7 +12,7 @@ import {
   declOfRoubles,
   getPaymentAmount,
   getPaymentData,
-  getPaymentInfo,
+  setPaymentEmail,
   isCompanyActive,
   pay
 } from '%/utils'
@@ -83,7 +83,7 @@ export default function SubscriptionPaymentPage(props: any) {
           })
         }
         onSubmit={(values, { setSubmitting }) => {
-          getPaymentInfo({ email: values.email, uuid: router.query.uuid }).then(resPaymentInfo => {
+          setPaymentEmail({ email: values.email, uuid: router.query.uuid }).then(resPaymentInfo => {
             getPaymentData({ uuid: router.query.uuid }).then(resPaymentData => {
               const { cloudpayments } = resPaymentData
 

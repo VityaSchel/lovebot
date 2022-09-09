@@ -1,4 +1,5 @@
 import axios, { AxiosError } from 'axios'
+import {config} from "%/utils/config";
 
 export const catchError = (error: AxiosError) => {
   if (error.response) {
@@ -19,7 +20,7 @@ export const catchError = (error: AxiosError) => {
   }
 }
 
-const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL
+const baseURL = config.baseURL
 
 export const api = axios.create({
   baseURL,
@@ -29,12 +30,12 @@ export const api = axios.create({
   withCredentials: false // to send cookie
 })
 
-type getPaymentInfoProps = {
+type setPaymentEmailProps = {
   email: string,
   uuid: any
 }
 
-export const getPaymentInfo = async (props: getPaymentInfoProps) => {
+export const setPaymentEmail = async (props: setPaymentEmailProps) => {
   try {
     const { email, uuid } = props
 
@@ -58,7 +59,7 @@ export const getPaymentData = async (props: getPaymentDataProps) => {
   try {
     const { uuid } = props
 
-    const { data: paymentData } = await api.get(`/payment/${uuid}/pay`)
+    const { data: paymentData } = await api.get(`/payments/${uuid}/pay`)
 
     console.log('paymentData', paymentData)
 
@@ -76,7 +77,7 @@ export const getPaymentAmount = async (props: getPaymentAmountProps) => {
   try {
     const { uuid } = props
 
-    const { data: paymentAmount } = await api.get(`/payment/${uuid}`)
+    const { data: paymentAmount } = await api.get(`/payments/${uuid}`)
 
     console.log('paymentAmount', paymentAmount)
 
@@ -86,23 +87,23 @@ export const getPaymentAmount = async (props: getPaymentAmountProps) => {
   }
 }
 
-type subscriptionUnsubscribeProps = {
+type subscriptionsUnsubscribeProps = {
   firstNumbers: string,
   lastNumbers: string
 }
 
-export const subscriptionUnsubscribe = async (props: subscriptionUnsubscribeProps) => {
+export const subscriptionsUnsubscribe = async (props: subscriptionsUnsubscribeProps) => {
   try {
     const { firstNumbers, lastNumbers } = props
 
-    const { data: subscriptionUnsubscribe } = await api.post('/subscription/unsubscribe', {
+    const { data: subscriptionsUnsubscribe } = await api.post('/subscriptions/unsubscribe', {
       firstNumbers,
       lastNumbers
     })
 
-    console.log('subscriptionUnsubscribe', subscriptionUnsubscribe)
+    console.log('subscriptionsUnsubscribe', subscriptionsUnsubscribe)
 
-    return subscriptionUnsubscribe
+    return subscriptionsUnsubscribe
   } catch (error: any) {
     return catchError(error)
   }
@@ -116,7 +117,7 @@ type CompanyStatusResponse = {
 
 export async function isCompanyActive(companyID: number): Promise<boolean> {
   try {
-    const query = `/advertising_company/${companyID}`
+    const query = `/advertising_companies/${companyID}`
     const response = await api.get(query)
     const data: CompanyStatusResponse = response.data
     if (response.status !== 200) throw new Error('Couldn\'t fetch ' + query)
