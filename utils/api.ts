@@ -39,7 +39,7 @@ export const setPaymentEmail = async (props: setPaymentEmailProps) => {
   try {
     const { email, uuid } = props
 
-    const { data: paymentInfo } = await api.post(`/payment/${uuid}/set-email`, {
+    const { data: paymentInfo } = await api.post(`/payments/${uuid}/set-email`, {
       email
     })
 
