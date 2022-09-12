@@ -121,7 +121,7 @@ export default function SubscriptionPaymentPage(props: any) {
               longLabel
             >
               Согласен с политикой обработки персональных данных, правилами предоставления услуг по подписке, <Link
-              href={config.tarifes}>
+              href={config.tariffs}>
               <a target='_blank' className={styles.termsLink}>
                 офертой рекуррентных платежей
               </a>
@@ -140,7 +140,7 @@ export default function SubscriptionPaymentPage(props: any) {
               longLabel
             >
               Я согласен подключить автоматические платежи по подписке. Сумма списаний согласно <Link
-              href={config.tarifes}>
+              href={config.tariffs}>
               <a target='_blank' className={styles.termsLink}>
                 тарифам
               </a>
