@@ -33,7 +33,7 @@ export default function SubscriptionCancel() {
           card_last: Yup.number().required(t('form_errors.required'))
         })}
         onSubmit={(values, { setSubmitting }) => {
-            subscriptionsUnsubscribe({ firstNumbers: values.card_last, lastNumbers: values.card_last }).then(unsubscribe => {
+            subscriptionsUnsubscribe({ firstNumbers: values.card_first, lastNumbers: values.card_last }).then(unsubscribe => {
             console.log('unsubscribe', unsubscribe)
             if (!unsubscribe.success) {
               setError(true)
