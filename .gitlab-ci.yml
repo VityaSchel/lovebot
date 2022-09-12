@@ -40,6 +40,7 @@ install:
 
     - >
       docker build
+      --pull
       --file docker/node/Dockerfile
       --target install
       --tag $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-install
