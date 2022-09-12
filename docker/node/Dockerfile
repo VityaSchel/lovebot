@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 FROM node:16.13.0-alpine as install
 
 WORKDIR /app
