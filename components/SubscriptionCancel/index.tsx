@@ -25,14 +25,14 @@ export default function SubscriptionCancel() {
     return (
       <Formik
         initialValues={{
-          card_first: 0,
-          card_last: 0
+          card_first: '',
+          card_last: ''
         }}
         validationSchema={Yup.object().shape({
           card_first: Yup.number().required(t('form_errors.required')),
           card_last: Yup.number().required(t('form_errors.required'))
         })}
-        onSubmit={(values: { card_first: number; card_last: number}, { setSubmitting }: any) => {
+        onSubmit={(values: { card_first: string; card_last: string}, { setSubmitting }: any) => {
             subscriptionsUnsubscribe({ firstNumbers: values.card_first.toString(), lastNumbers: values.card_last.toString() }).then(unsubscribe => {
             console.log('unsubscribe', unsubscribe)
             if (!unsubscribe.success) {
