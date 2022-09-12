@@ -1,4 +1,4 @@
-# prank_landing
+# lovebot_landing
 
 
 ## Getting started

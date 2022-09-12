@@ -84,12 +84,12 @@ function Header({ amount }: { amount: number }) {
             <Logo />
           </div>
           <div className={styles.logoText}>
-            {t('content.prank')}
+            {t('content.lovebot')}
           </div>
         </div>
         <div className={styles.content}>
           <div>
-            <Heading variant='h1' center>{t('content.tryPrank')}</Heading>
+            <Heading variant='h1' center>{t('content.trylovebot')}</Heading>
             <Heading variant='h1' center className={styles.gradient}>{t('content.price')} {amount} {declOfRoubles(
               amount)}</Heading>
           </div>

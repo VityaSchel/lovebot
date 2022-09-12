@@ -7,12 +7,12 @@ import Heading from '%/components/common/Heading'
 import { ReactComponent as Play } from '../../public/static/play.svg'
 import { ReactComponent as Pause } from '../../public/static/pause.svg'
 
-import prank1 from '../../public/static/1.mp3'
-import prank2 from '../../public/static/2.mp3'
-import prank3 from '../../public/static/3.mp3'
-import prank4 from '../../public/static/4.mp3'
-import prank5 from '../../public/static/5.mp3'
-import prank6 from '../../public/static/6.mp3'
+import lovebot1 from '../../public/static/1.mp3'
+import lovebot2 from '../../public/static/2.mp3'
+import lovebot3 from '../../public/static/3.mp3'
+import lovebot4 from '../../public/static/4.mp3'
+import lovebot5 from '../../public/static/5.mp3'
+import lovebot6 from '../../public/static/6.mp3'
 
 import styles from './styles.module.scss'
 
@@ -47,38 +47,38 @@ export default function Examples() {
     {
       id: 1,
       title: 'Розыгрыш над другом с раннего утра',
-      url: prank1,
-      play: useAudio(prank1)
+      url: lovebot1,
+      play: useAudio(lovebot1)
     },
     {
       id: 2,
       title: 'Батя рвал и метал от такого',
-      url: prank2,
-      play: useAudio(prank2)
+      url: lovebot2,
+      play: useAudio(lovebot2)
     },
     {
       id: 3,
       title: 'Брат не ожидал подарочка',
-      url: prank3,
-      play: useAudio(prank3)
+      url: lovebot3,
+      play: useAudio(lovebot3)
     },
     {
       id: 4,
       title: 'Разыграли учителя во время урока',
-      url: prank4,
-      play: useAudio(prank4)
+      url: lovebot4,
+      play: useAudio(lovebot4)
     },
     {
       id: 5,
       title: 'Бомбануло у службы поддержки',
-      url: prank5,
-      play: useAudio(prank5)
+      url: lovebot5,
+      play: useAudio(lovebot5)
     },
     {
       id: 6,
       title: 'Разыграли соседа типа полиция',
-      url: prank6,
-      play: useAudio(prank6)
+      url: lovebot6,
+      play: useAudio(lovebot6)
     }
   ]
 
