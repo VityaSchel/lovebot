@@ -25,7 +25,7 @@ install:
   stage: prepare
   services:
     - name: docker:${DOCKER_VERSION}-dind
-      command: ["--registry-mirror", "https://proxy-registry.skidstor.com"]
+#      command: ["--registry-mirror", "https://proxy-registry.skidstor.com"]
   cache:
     - key:
         files:
