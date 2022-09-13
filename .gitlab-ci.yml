@@ -84,7 +84,6 @@ install:
       --build-arg NEXT_PUBLIC_USER_AGREEMENT=$NEXT_PUBLIC_USER_AGREEMENT
       --build-arg NEXT_PUBLIC_CONTACT_EMAIL=$NEXT_PUBLIC_CONTACT_EMAIL
       --build-arg NEXT_PUBLIC_BOT_LINK=$NEXT_PUBLIC_BOT_LINK
-      --build-arg NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT=$NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT
       --build-arg NEXT_PUBLIC_TEXT_SECOND_CHECKBOX="$NEXT_PUBLIC_TEXT_SECOND_CHECKBOX"
       --build-arg NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES="$NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES"
       --build-arg NEXT_PUBLIC_COMPANY_NAME="$NEXT_PUBLIC_COMPANY_NAME"
@@ -127,7 +126,6 @@ build_loverbotxyz:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/SJdrU5VCz1LBNQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
@@ -144,7 +142,6 @@ build_healthyeatinglive:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
@@ -161,7 +158,6 @@ build_dietaquest:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
@@ -178,7 +174,6 @@ build_lovebotinfo:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
@@ -195,7 +190,6 @@ build_xlovebotxyz:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
@@ -213,7 +207,6 @@ build_pay-love-botxyz:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
@@ -230,7 +223,6 @@ build_loverbotpayxyz:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
@@ -247,7 +239,6 @@ build_lovebotvkxyz:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
@@ -264,7 +255,6 @@ build_paylovebotxyz:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
@@ -281,7 +271,6 @@ build_paylovebot1xyz:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
@@ -298,7 +287,6 @@ build_loverbotingxyz:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
@@ -315,7 +303,6 @@ build_love-bot-vkxyz:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT: https://vk.com/im
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного журнала. В дальнейшем, через 6 часов после получения пробного журнала, списывается 3290 рублей за каждый месяц использования сервиса. В случае нехватки средств, мы переведем вас на тариф со списаниями по 1690 руб каждые две недели, по 890 руб каждую неделю, 490 руб. за 3 дня и 190 руб за каждые сутки.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 3290 ₽ в месяц. В случае, если у пользователя не достаточно средств для оплаты подписки, он переводится на более дешевый тариф, который составляет 1690 руб. за 2 недели, 890 руб. за неделю, 490 руб. за 3 дня, 190 руб. за день использования подписки.
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна

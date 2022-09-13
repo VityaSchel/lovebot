@@ -1,15 +1,11 @@
-import Router from 'next/router'
 
 type payProps = {
   cloudpayments: any,
   onSuccess: any
 }
 
-const redirectAfterPayment = process.env.NEXT_PUBLIC_REDIRECT_AFTER_PAYMENT
-
 export function pay(props: payProps) {
   try {
-    // @ts-ignore
     const widget = new cp.CloudPayments()
 
     const { cloudpayments, onSuccess } = props
@@ -20,7 +16,6 @@ export function pay(props: payProps) {
       {
         onSuccess: function(options: any) {
           // действие при успешной оплате
-          Router.push(redirectAfterPayment)
          // onSuccess()
         },
         onFail: function(reason: any, options: any) {
