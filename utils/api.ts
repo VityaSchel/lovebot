@@ -1,4 +1,4 @@
-import axios, { AxiosError } from 'axios'
+import axios, { AxiosError, AxiosResponse } from 'axios'
 import {config} from "%/utils/config";
 
 export const catchError = (error: AxiosError) => {
@@ -96,7 +96,7 @@ export const subscriptionsUnsubscribe = async (props: subscriptionsUnsubscribePr
   try {
     const { firstNumbers, lastNumbers } = props
 
-    const { data: subscriptionsUnsubscribe } = await api.post('/subscriptions/unsubscribe', {
+    const subscriptionsUnsubscribe: AxiosResponse = await api.post('/subscriptions/unsubscribe', {
       firstNumbers,
       lastNumbers
     })
