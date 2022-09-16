@@ -33,7 +33,7 @@ export default function ModulePage() {
             name: 'Модуль "Лав Бот"',
             description: 'Лав бот позволяет искать скрытых поклонников ВКонтакте. Уникальная система анализа бота ищет самых активных пользователей, кто посещает страницу и оставляет реакции. С помощью функционала бота можно понять, кто из посетителей наиболее заинтересован твоей страницей и выразить ему взаимную симпатию или понять что-то о своих поклонниках. Бот работает по системе подписки и предоставляет функционал на период её действия. Фунционал бота (проверка пользователя) проводится только из открытых источников, анализу подлежат только открытые страницы ВКонтакте.',
             amount: 1,
-            amountWithoutDiscount: 1990
+            amountWithoutDiscount: 2890
           }}
           link={config.botLink}
         />
@@ -72,7 +72,7 @@ function Form(props: FormProps) {
       </div>
       <div className={styles.priceBlock}>
         <h3 className={styles.decorationLine}>Стоимость подписки <span
-          className={styles.orange}>{props.module.amount} ₽</span> в первые 6 часов</h3>
+          className={styles.orange}>{props.module.amount} ₽</span> за первые 72 часа</h3>
         <p>{config.mainPageTextSubscriptionPrices}</p>
       </div>
       <div className={styles.methodsBlock}>
