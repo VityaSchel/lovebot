@@ -344,7 +344,7 @@ build_mylovebotxyz:
 build_loverzonexyz:
   extends: .build_template
   variables:
-    PROJECT_NAME: loverzone.xyz
+    PROJECT_NAME: loverzonexyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
