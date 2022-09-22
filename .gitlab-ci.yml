@@ -309,6 +309,70 @@ build_love-bot-vkxyz:
     NEXT_PUBLIC_COMPANY_INN: 190901248906
     NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
 
+build_lovelybotxyz:
+  extends: .build_template
+  variables:
+    PROJECT_NAME: lovelybotxyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
+    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
+    NEXT_PUBLIC_COMPANY_INN: 360601215399
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
+
+build_mylovebotxyz:
+  extends: .build_template
+  variables:
+    PROJECT_NAME: mylovebotxyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
+    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
+    NEXT_PUBLIC_COMPANY_INN: 360601215399
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
+
+build_loverzonexyz:
+  extends: .build_template
+  variables:
+    PROJECT_NAME: loverzone.xyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
+    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
+    NEXT_PUBLIC_COMPANY_INN: 360601215399
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
+
+build_loverpayxyz:
+  extends: .build_template
+  variables:
+    PROJECT_NAME: loverpayxyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
+    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
+    NEXT_PUBLIC_COMPANY_INN: 360601215399
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
+
 deploy_production_loverbotxyz:
   extends: .deploy_production_template
   variables:
@@ -380,3 +444,27 @@ deploy_production_love-bot-vkxyz:
   variables:
     PROJECT_NAME: love-bot-vkxyz
     VIRTUAL_HOST: love-bot-vk.xyz
+
+deploy_production_lovelybotxyz:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: lovelybotxyz
+    VIRTUAL_HOST: lovelybot.xyz
+
+deploy_production_mylovebotxyz:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: mylovebotxyz
+    VIRTUAL_HOST: mylovebot.xyz
+
+deploy_production_loverzonexyz:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: loverzonexyz
+    VIRTUAL_HOST: loverzone.xyz
+
+deploy_production_loverpayxyz:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: loverpayxyz
+    VIRTUAL_HOST: loverpay.xyz
