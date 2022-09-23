@@ -27,12 +27,10 @@ export default function CustomHead(props: CustomHeadProps) {
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F56B18" />
-      <meta name="apple-mobile-web-app-title" content="Bot.biz" />
-      <meta name="application-name" content="Bot.biz" />
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-      <meta property="og:title" content={`${props.title} — Bot.Biz`} />
+      <meta property="og:title" content={`${props.title}`} />
       <meta property="og:type" content="website" />
       <meta property="og:description" content={props.description} />
       <meta property="og:image" content={banner.src} />
