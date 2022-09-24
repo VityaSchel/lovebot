@@ -122,12 +122,12 @@ build_loverbotxyz:
     PROJECT_NAME: loverbotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/SJdrU5VCz1LBNQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
     NEXT_PUBLIC_COMPANY_INN: 101601117953
     NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
@@ -138,12 +138,12 @@ build_healthyeatinglive:
     PROJECT_NAME: healthyeatinglive
     NEXT_PUBLIC_BACKEND_URL: https://api.healthyeating.live
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
     NEXT_PUBLIC_COMPANY_INN: 101601117953
     NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
@@ -154,12 +154,12 @@ build_dietaquest:
     PROJECT_NAME: dietaquest
     NEXT_PUBLIC_BACKEND_URL: https://api.dieta.quest
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
     NEXT_PUBLIC_COMPANY_INN: 101601117953
     NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
@@ -170,12 +170,12 @@ build_lovebotinfo:
     PROJECT_NAME: lovebotinfo
     NEXT_PUBLIC_BACKEND_URL: https://api.lovebot.info
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
     NEXT_PUBLIC_COMPANY_INN: 101601117953
     NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
@@ -186,12 +186,12 @@ build_xlovebotxyz:
     PROJECT_NAME: xlovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
@@ -203,12 +203,12 @@ build_pay-love-botxyz:
     PROJECT_NAME: pay-love-botxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
@@ -219,12 +219,12 @@ build_loverbotpayxyz:
     PROJECT_NAME: loverbotpayxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
@@ -235,12 +235,12 @@ build_lovebotvkxyz:
     PROJECT_NAME: lovebotvkxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
@@ -251,12 +251,12 @@ build_paylovebotxyz:
     PROJECT_NAME: paylovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
@@ -267,12 +267,12 @@ build_paylovebot1xyz:
     PROJECT_NAME: paylovebot1xyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 190901248906
     NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
@@ -283,12 +283,12 @@ build_loverbotingxyz:
     PROJECT_NAME: loverbotingxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 190901248906
     NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
@@ -299,12 +299,12 @@ build_love-bot-vkxyz:
     PROJECT_NAME: love-bot-vkxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 190901248906
     NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
@@ -315,12 +315,12 @@ build_lovelybotxyz:
     PROJECT_NAME: lovelybotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
@@ -331,12 +331,12 @@ build_mylovebotxyz:
     PROJECT_NAME: mylovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
@@ -347,12 +347,12 @@ build_loverzonexyz:
     PROJECT_NAME: loverzonexyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
@@ -363,12 +363,12 @@ build_loverpayxyz:
     PROJECT_NAME: loverpayxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/KHlpQrqQ1ysYsg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждый месяц использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ в месяц
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
