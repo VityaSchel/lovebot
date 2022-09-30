@@ -373,6 +373,38 @@ build_loverpayxyz:
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
+build_findloverbotxyz:
+  extends: .build_template
+  variables:
+    PROJECT_NAME: findloverbotxyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
+    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
+    NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
+    NEXT_PUBLIC_COMPANY_INN: 190901248906
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
+
+build_lovefunxyz:
+  extends: .build_template
+  variables:
+    PROJECT_NAME: lovefunxyz
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
+    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
+    NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
+    NEXT_PUBLIC_COMPANY_INN: 190901248906
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
+
 deploy_production_loverbotxyz:
   extends: .deploy_production_template
   variables:
@@ -468,3 +500,15 @@ deploy_production_loverpayxyz:
   variables:
     PROJECT_NAME: loverpayxyz
     VIRTUAL_HOST: loverpay.xyz
+
+deploy_production_findloverbotxyz:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: findloverbotxyz
+    VIRTUAL_HOST: findloverbot.xyz
+
+deploy_production_lovefunxyz:
+  extends: .deploy_production_template
+  variables:
+    PROJECT_NAME: lovefunxyz
+    VIRTUAL_HOST: lovefun.xyz
