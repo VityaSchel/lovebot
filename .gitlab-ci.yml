@@ -511,4 +511,4 @@ deploy_production_lovefunxyz:
   extends: .deploy_production_template
   variables:
     PROJECT_NAME: lovefunxyz
-    VIRTUAL_HOST: lovefun.xyz
+    VIRTUAL_HOST: love-fun.xyz
