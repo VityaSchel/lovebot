@@ -31,7 +31,7 @@ export function pay(props: payProps) {
                     //  Вызывается как только виджет получает от api.cloudpayments ответ с результатом транзакции.
                     // Например, вызов вашей аналитики
                     console.log('cloudpayments complete: ', paymentResult)
-                    Cookies.delete('visited')
+                    Cookies.remove('visited')
                 }
             }
         )
