@@ -25,6 +25,7 @@ export function pay(props: payProps) {
         onComplete: function(paymentResult: any, options: any) {
           //  Вызывается как только виджет получает от api.cloudpayments ответ с результатом транзакции.
           // Например, вызов вашей аналитики
+            Cookies.delete('visited')
         }
       }
     )
