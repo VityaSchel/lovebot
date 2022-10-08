@@ -40,7 +40,7 @@ export default function SubscriptionPaymentPage(props: any) {
         Cookies.set('visited', (new Date()).toISOString())
 
         const params = new URLSearchParams(window.location.search)
-        params.delete('ads')
+        // params.delete('ads')
         window.history.pushState({}, '', window.location.pathname + (params.toString() && '?' + params.toString()))
 
         return false
