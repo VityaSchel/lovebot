@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie'
 
 type payProps = {
   cloudpayments: any,
