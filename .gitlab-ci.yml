@@ -399,8 +399,8 @@ build_lovefunxyz:
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 72 часа
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждые 7 дней использования сервиса. В случае нехватки средств, спустя 6 часа, мы переведем вас на тариф со списаниями по 1690 руб за каждые 3 дня или 690 руб за каждый день доступа к сервису.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ за каждые 7 дней
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 190901248906
     NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
