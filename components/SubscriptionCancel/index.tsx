@@ -48,7 +48,7 @@ export default function SubscriptionCancel() {
                     <form onSubmit={handleSubmit}>
                         <div className={styles.card}>
                             <Input
-                                type='number'
+                                type='text'
                                 name='card_first'
                                 onChange={handleChange}
                                 onBlur={handleBlur}
@@ -59,7 +59,7 @@ export default function SubscriptionCancel() {
                             />
 
                             <Input
-                                type='number'
+                                type='text'
                                 name='card_last'
                                 onChange={handleChange}
                                 onBlur={handleBlur}
