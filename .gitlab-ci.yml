@@ -121,9 +121,9 @@ build_loverbotxyz:
   variables:
     PROJECT_NAME: loverbotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/SJdrU5VCz1LBNQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -137,9 +137,9 @@ build_healthyeatinglive:
   variables:
     PROJECT_NAME: healthyeatinglive
     NEXT_PUBLIC_BACKEND_URL: https://api.healthyeating.live
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -153,9 +153,9 @@ build_dietaquest:
   variables:
     PROJECT_NAME: dietaquest
     NEXT_PUBLIC_BACKEND_URL: https://api.dieta.quest
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -169,9 +169,9 @@ build_lovebotinfo:
   variables:
     PROJECT_NAME: lovebotinfo
     NEXT_PUBLIC_BACKEND_URL: https://api.lovebot.info
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -185,9 +185,9 @@ build_xlovebotxyz:
   variables:
     PROJECT_NAME: xlovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -202,9 +202,9 @@ build_pay-love-botxyz:
   variables:
     PROJECT_NAME: pay-love-botxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -218,9 +218,9 @@ build_loverbotpayxyz:
   variables:
     PROJECT_NAME: loverbotpayxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -234,9 +234,9 @@ build_lovebotvkxyz:
   variables:
     PROJECT_NAME: lovebotvkxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -250,9 +250,9 @@ build_paylovebotxyz:
   variables:
     PROJECT_NAME: paylovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -266,9 +266,9 @@ build_paylovebot1xyz:
   variables:
     PROJECT_NAME: paylovebot1xyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -282,9 +282,9 @@ build_loverbotingxyz:
   variables:
     PROJECT_NAME: loverbotingxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -298,9 +298,9 @@ build_love-bot-vkxyz:
   variables:
     PROJECT_NAME: love-bot-vkxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -314,9 +314,9 @@ build_lovelybotxyz:
   variables:
     PROJECT_NAME: lovelybotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -330,9 +330,9 @@ build_mylovebotxyz:
   variables:
     PROJECT_NAME: mylovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -346,9 +346,9 @@ build_loverzonexyz:
   variables:
     PROJECT_NAME: loverzonexyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -362,9 +362,9 @@ build_loverpayxyz:
   variables:
     PROJECT_NAME: loverpayxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -378,9 +378,9 @@ build_findloverbotxyz:
   variables:
     PROJECT_NAME: findloverbotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
@@ -394,9 +394,9 @@ build_lovefunxyz:
   variables:
     PROJECT_NAME: lovefunxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/bUsF6dPCCOXRdQ
+    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/OkeNJuxCmLjhqA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/xV5k3dTUsrS1AQ
+    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 2890 рублей за каждые 7 дней использования сервиса. В случае нехватки средств, спустя 6 часа, мы переведем вас на тариф со списаниями по 1690 руб за каждые 3 дня или 690 руб за каждый день доступа к сервису.
