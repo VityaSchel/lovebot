@@ -70,11 +70,11 @@ function Form(props: FormProps) {
         <h2 className={styles.decorationLine}>{props.module.name}</h2>
         <p>{props.module.description}</p>
       </div>
-      <div className={styles.priceBlock}>
-        <h3 className={styles.decorationLine}>Стоимость подписки <span
-          className={styles.orange}>{props.module.amount} ₽</span> за первые 72 часа</h3>
-        <p>{config.mainPageTextSubscriptionPrices}</p>
-      </div>
+      {/*<div className={styles.priceBlock}>*/}
+      {/*  <h3 className={styles.decorationLine}>Стоимость подписки <span*/}
+      {/*    className={styles.orange}>{props.module.amount} ₽</span> за первые 72 часа</h3>*/}
+      {/*  <p>{config.mainPageTextSubscriptionPrices}</p>*/}
+      {/*</div>*/}
       <div className={styles.methodsBlock}>
         <h3 className={styles.decorationLine}>Методы оплаты</h3>
         <p>Банковские карты. VISA, MasterCard, МИР</p>
