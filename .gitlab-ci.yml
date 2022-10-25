@@ -347,7 +347,7 @@ build_loverzonexyz:
     PROJECT_NAME: loverzonexyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/Ar-kpeGAK_ALYg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/21yMl9va4fl2iA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
