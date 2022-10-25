@@ -186,61 +186,11 @@ install:
   rules:
     - if: $CI_COMMIT_BRANCH == "dev"
 
-build_loverbotxyz:
-  extends: .build_production_template
-  variables:
-    PROJECT_NAME: loverbotxyz
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
-    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
-    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
-    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
-    NEXT_PUBLIC_COMPANY_INN: 101601117953
-    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main"
-
-#build_healthyeatinglive:
-#  extends: .build_production_template
-#  variables:
-#    PROJECT_NAME: healthyeatinglive
-#    NEXT_PUBLIC_BACKEND_URL: https://api.healthyeating.live
-#    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
-#    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-#    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
-#    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
-#    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-#    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-#    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
-#    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
-#    NEXT_PUBLIC_COMPANY_INN: 101601117953
-#    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
-
 build_dietaquest:
   extends: .build_development_template
   variables:
     PROJECT_NAME: dietaquest
-    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
-    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
-    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
-    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
-    NEXT_PUBLIC_COMPANY_INN: 101601117953
-    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
-
-build_lovebotinfo:
-  extends: .build_production_template
-  variables:
-    PROJECT_NAME: lovebotinfo
-    NEXT_PUBLIC_BACKEND_URL: https://api.lovebot.info
+    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
