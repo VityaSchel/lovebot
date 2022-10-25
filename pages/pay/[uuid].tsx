@@ -120,12 +120,12 @@ export default function SubscriptionPaymentPage(props: any) {
               className={styles.terms}
               longLabel
             >
-              Согласен с политикой обработки персональных данных, правилами предоставления услуг по подписке, <Link
-              href={config.tariffs}>
+              Согласен с политикой обработки персональных данных, правилами предоставления услуг по подписке, 
+              <Link href={`${config.tariffs}`}>
               <a target='_blank' className={styles.termsLink}>
                 офертой рекуррентных платежей
               </a>
-            </Link>, <Link href={config.userAgreement}>
+            </Link>, <Link href={`${config.userAgreement}`}>
               <a target='_blank' className={styles.termsLink}>
                 договором-офертой и условиями использования
               </a>
@@ -139,8 +139,8 @@ export default function SubscriptionPaymentPage(props: any) {
               className={styles.terms}
               longLabel
             >
-              Я согласен подключить автоматические платежи по подписке. Сумма списаний согласно <Link
-              href={config.tariffs}>
+              Я согласен подключить автоматические платежи по подписке. Сумма списаний согласно 
+              <Link href={`${config.tariffs}`}>
               <a target='_blank' className={styles.termsLink}>
                 тарифам
               </a>
@@ -228,16 +228,17 @@ export default function SubscriptionPaymentPage(props: any) {
             <span>EMAIL: {config.contactEmail}</span>
           </div>
           <div className={styles.links}>
-            <Link href={config.userAgreement}><a target='_blank'>Пользовательское соглашение</a></Link>
-            <Link href={config.dataPolicy}><a target='_blank'>Политика обработки данных</a></Link>
+            <Link href={`${config.userAgreement}`}><a target='_blank'>Пользовательское соглашение</a></Link>
+            <Link href={`${config.dataPolicy}`}><a target='_blank'>Политика обработки данных</a></Link>
             <Link href='/subscription-cancellation'><a>Отмена подписки</a></Link>
-            <Link href={config.tariffs}><a target='_blank'>Тарифы</a></Link>
+            <Link href={`${config.tariffs}`}><a target='_blank'>Тарифы</a></Link>
           </div>
         </footer>
       </div>
     )
   }
 
+  
   return (
     <main className={styles.container}>
       <Info

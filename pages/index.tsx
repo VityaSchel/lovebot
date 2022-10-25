@@ -102,10 +102,10 @@ function Form(props: FormProps) {
           <span>EMAIL: {config.contactEmail}</span>
         </div>
         <div className={styles.links}>
-          <Link href={config.userAgreement}><a target='_blank'>Пользовательское соглашение</a></Link>
-          <Link href={config.dataPolicy}><a target='_blank'>Политика обработки данных</a></Link>
+          <Link href={`${config.userAgreement}`}><a target='_blank'>Пользовательское соглашение</a></Link>
+          <Link href={`${config.dataPolicy}`}><a target='_blank'>Политика обработки данных</a></Link>
           <Link href='/subscription-cancellation'><a>Отмена подписки</a></Link>
-          <Link href={config.tariffs}><a target='_blank'>Тарифы</a></Link>
+          <Link href={`${config.tariffs}`}><a target='_blank'>Тарифы</a></Link>
         </div>
       </footer>
     </div>
