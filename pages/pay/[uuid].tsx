@@ -31,6 +31,7 @@ export default function SubscriptionPaymentPage(props: any) {
   const router = useRouter()
   const [success, setSuccess] = useState(false)
   const [showCheckboxes, setShowCheckboxes] = React.useState(false)
+  
   let verifyCheckbox = true
 
   const hasCheckboxes = (companyActive: boolean): boolean => {
@@ -52,7 +53,7 @@ export default function SubscriptionPaymentPage(props: any) {
     }
   }
 
-  
+
   React.useEffect(() => {
     if (!verifyCheckbox) return
     verifyCheckbox = false
