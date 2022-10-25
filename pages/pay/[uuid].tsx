@@ -122,14 +122,14 @@ export default function SubscriptionPaymentPage(props: any) {
             >
               Согласен с политикой обработки персональных данных, правилами предоставления услуг по подписке, 
               <Link href={`${config.tariffs}`}>
-              <a target='_blank' className={styles.termsLink}>
+                <a target='_blank' className={styles.termsLink}>
                 офертой рекуррентных платежей
-              </a>
-            </Link>, <Link href={`${config.userAgreement}`}>
-              <a target='_blank' className={styles.termsLink}>
+                </a>
+              </Link>, <Link href={`${config.userAgreement}`}>
+                <a target='_blank' className={styles.termsLink}>
                 договором-офертой и условиями использования
-              </a>
-            </Link>
+                </a>
+              </Link>
             </Checkbox>}
             {showCheckboxes && <Checkbox
               id='auto_pay_agreement'
@@ -141,10 +141,10 @@ export default function SubscriptionPaymentPage(props: any) {
             >
               Я согласен подключить автоматические платежи по подписке. Сумма списаний согласно 
               <Link href={`${config.tariffs}`}>
-              <a target='_blank' className={styles.termsLink}>
+                <a target='_blank' className={styles.termsLink}>
                 тарифам
-              </a>
-            </Link> составит {config.textSecondCheckbox}
+                </a>
+              </Link> составит {config.textSecondCheckbox}
             </Checkbox>}
             <div>
               <Button
@@ -193,9 +193,9 @@ export default function SubscriptionPaymentPage(props: any) {
         <div className={[styles.heading, styles.decorationLine].join(' ')}>
           <h1>Оплата счета</h1>
           <div className={styles.iconContainer}>
-          <span className={styles.icon}>
-            {props.icon}
-          </span>
+            <span className={styles.icon}>
+              {props.icon}
+            </span>
             <h1>{props.title}</h1>
           </div>
         </div>
@@ -208,15 +208,30 @@ export default function SubscriptionPaymentPage(props: any) {
                   <ShieldIcon />
                   <span>Безопасная оплата</span>
                 </div>
-                <h2>Попробуй всего за</h2>
-                <div className={styles.price}>
-                  <span className={styles.number}>{amount}</span>
-                  <span className={styles.label}>{declOfRoubles(amount)}</span>
-                </div>
+                {showCheckboxes &&
+                  <span className={styles.warningTitle}>Подписка на функционал ПранкБот для звонков</span>}
+                {
+                  showCheckboxes
+                    ? <>
+                      {/* <h2>Попробуй всего за</h2> */}
+                      <div className={styles.price}>
+                        <span className={styles.number}>1</span>
+                        <span className={styles.label}>рубль</span>
+                      </div>
+                    </>
+                    : <>
+                      <h2>Попробуй всего за</h2>
+                      <div className={styles.price}>
+                        <span className={styles.number}>{amount}</span>
+                        <span className={styles.label}>{declOfRoubles(amount)}</span>
+                      </div>
+                    </>
+                }
                 {/*<span className={styles.insteadOfPrice}>вместо <span*/}
                 {/*  className={styles.strikethrough}>{amountWithoutDiscount} ₽</span></span>*/}
+                {showCheckboxes &&
+                  <span className={styles.warningTitle}>{config?.payPageTextSubscriptionPrices}</span>}
                 <Form />
-                {/*<span className={styles.footer}>{amount} ₽ первый месяц, далее {amountWithoutDiscount} ₽</span>*/}
               </>
           }
         </div>
