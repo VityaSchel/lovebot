@@ -32,9 +32,9 @@ export default function SubscriptionCancel() {
                     card_first: Yup.number().required(t('form_errors.required')),
                     card_last: Yup.number().required(t('form_errors.required'))
                 })}
-                onSubmit={(values: { card_first: string; card_last: string}, { setSubmitting }: any) => {
+                onSubmit={(values: { card_first: string; card_last: string }, { setSubmitting }: any) => {
                     subscriptionsUnsubscribe({ firstNumbers: values.card_first.toString(), lastNumbers: values.card_last.toString() }).then(res => {
-                        if (res!.status == 200) {
+                        if (res?.status == 200) {
                             setSuccess(true)
                         } else {
                             setError(true)
