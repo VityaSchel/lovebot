@@ -20,6 +20,7 @@
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "@react-hook/size": "^2.1.2",
     "@reduxjs/toolkit": "^1.8.1",
+    "@types/js-cookie": "^3.0.2",
     "@visx/event": "^2.6.0",
     "@visx/gradient": "^2.10.0",
     "@visx/grid": "^2.10.0",

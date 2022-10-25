@@ -9,6 +9,7 @@ const mainPageTextSubscriptionPrices = process.env.NEXT_PUBLIC_MAIN_PAGE_TEXT_SU
 const companyName = process.env.NEXT_PUBLIC_COMPANY_NAME
 const companyInn = process.env.NEXT_PUBLIC_COMPANY_INN
 const companyOgrnip = process.env.NEXT_PUBLIC_COMPANY_OGRNIP
+const payPageTextSubscriptionPrices = process.env.NEXT_PUBLIC_PAY_PAGE_TEXT_SUBSCRIPTION_PRICES
 
 console.log('baseURL', baseURL)
 console.log('dataPolicy', dataPolicy)
@@ -33,5 +34,6 @@ export const config = {
   mainPageTextSubscriptionPrices,
   companyName,
   companyInn,
-  companyOgrnip
+  companyOgrnip,
+  payPageTextSubscriptionPrices
 }

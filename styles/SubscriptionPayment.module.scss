@@ -16,6 +16,18 @@
     padding: 0;
   }
 
+  .warningTitle{
+    color: inherit;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 428px) {
+    .warningTitle{
+      padding: 0 10px;
+      text-align: center;
+    }
+  }
+
   .form {
     width: 942px;
     background-color: white;
