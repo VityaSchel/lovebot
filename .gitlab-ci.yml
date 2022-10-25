@@ -224,7 +224,7 @@ build_dietaquest:
   extends: .build_development_template
   variables:
     PROJECT_NAME: dietaquest
-    NEXT_PUBLIC_BACKEND_URL: https://api.lovebot.info
+    NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
