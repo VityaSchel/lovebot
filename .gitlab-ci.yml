@@ -352,7 +352,7 @@ build_loverzonexyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 982 рублей за каждые 5 дней использования сервиса. В случае нехватки средств, спустя 6 часа, мы переведем вас на тариф со списаниями по 694 руб за каждые 3 дня или 197 руб за каждый день доступа к сервису.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за каждые 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 982 ₽ за каждые 5 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
