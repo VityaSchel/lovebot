@@ -52,6 +52,7 @@ export default function SubscriptionPaymentPage(props: any) {
     }
   }
 
+  
   React.useEffect(() => {
     if (!verifyCheckbox) return
     verifyCheckbox = false
