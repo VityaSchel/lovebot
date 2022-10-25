@@ -238,6 +238,7 @@ export default function SubscriptionPaymentPage(props: any) {
     )
   }
 
+  
   return (
     <main className={styles.container}>
       <Info
