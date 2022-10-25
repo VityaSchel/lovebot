@@ -50,7 +50,7 @@ install:
     - docker create --name node $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-install
     - docker cp node:/app/node_modules $CI_PROJECT_DIR/
 
-.build_template:
+.build_production_template:
   stage: build
   services:
     - name: docker:${DOCKER_VERSION}-dind
@@ -76,7 +76,7 @@ install:
       --file docker/node/Dockerfile
       --build-arg BUILDKIT_INLINE_CACHE=1
       --cache-from $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
-      --target build
+      --target builder
       --tag $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
       --build-arg NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL
       --build-arg NEXT_PUBLIC_DATA_POLICY=$NEXT_PUBLIC_DATA_POLICY
@@ -97,6 +97,58 @@ install:
     - docker cp main_page:/app/.next/cache $CI_PROJECT_DIR/.next/cache
 
     - docker push $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+.build_development_template:
+  stage: build
+  services:
+    - name: docker:${DOCKER_VERSION}-dind
+      command: ["--registry-mirror", "https://proxy-registry.skidstor.com"]
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      paths:
+        - node_modules
+      policy: pull
+    - key: next-cache-${PROJECT_NAME}-${CI_COMMIT_REF_SLUG}
+      paths:
+        - .next/cache
+      policy: pull-push
+  before_script:
+    - !reference [.docker_init_template]
+  script:
+    - mkdir -p .next/cache
+
+    - >
+      docker build
+      --file docker/node/Dockerfile
+      --build-arg BUILDKIT_INLINE_CACHE=1
+      --cache-from $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
+      --target builder
+      --tag $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
+      --build-arg NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL
+      --build-arg NEXT_PUBLIC_DATA_POLICY=$NEXT_PUBLIC_DATA_POLICY
+      --build-arg NEXT_PUBLIC_TARIFFS=$NEXT_PUBLIC_TARIFFS
+      --build-arg NEXT_PUBLIC_USER_AGREEMENT=$NEXT_PUBLIC_USER_AGREEMENT
+      --build-arg NEXT_PUBLIC_CONTACT_EMAIL=$NEXT_PUBLIC_CONTACT_EMAIL
+      --build-arg NEXT_PUBLIC_BOT_LINK=$NEXT_PUBLIC_BOT_LINK
+      --build-arg NEXT_PUBLIC_TEXT_SECOND_CHECKBOX="$NEXT_PUBLIC_TEXT_SECOND_CHECKBOX"
+      --build-arg NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES="$NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES"
+      --build-arg NEXT_PUBLIC_COMPANY_NAME="$NEXT_PUBLIC_COMPANY_NAME"
+      --build-arg NEXT_PUBLIC_COMPANY_INN=$NEXT_PUBLIC_COMPANY_INN
+      --build-arg NEXT_PUBLIC_COMPANY_OGRNIP=$NEXT_PUBLIC_COMPANY_OGRNIP
+      .
+
+    - rm -rf .next/cache
+
+    - docker create --name main_page $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
+    - docker cp main_page:/app/.next/cache $CI_PROJECT_DIR/.next/cache
+
+    - docker push $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
 
 .deploy_production_template:
   stage: deploy
@@ -116,8 +168,26 @@ install:
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
 
+.deploy_development_template:
+  stage: deploy
+  environment:
+    name: production-${PROJECT_NAME}
+  variables:
+    COMPOSE_PROJECT_NAME: ${PROJECT_NAME}_main_page
+    LANDING_IMAGE: $DOCKER_REGISTRY_PATH:$CI_COMMIT_REF_NAME-$PROJECT_NAME
+    DOCKER_HOST: $DEPLOY_PROD_DOCKER_HOST
+  before_script:
+    - !reference [.ssh_init_template]
+    - !reference [.docker_init_template]
+  script:
+    - docker compose pull main_page
+
+    - docker compose up -d --wait
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+
 build_loverbotxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: loverbotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.loverbot.xyz
@@ -127,45 +197,47 @@ build_loverbotxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
     NEXT_PUBLIC_COMPANY_INN: 101601117953
     NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
 
-build_healthyeatinglive:
-  extends: .build_template
-  variables:
-    PROJECT_NAME: healthyeatinglive
-    NEXT_PUBLIC_BACKEND_URL: https://api.healthyeating.live
-    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
-    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
-    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
-    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
-    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
-    NEXT_PUBLIC_COMPANY_INN: 101601117953
-    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
+#build_healthyeatinglive:
+#  extends: .build_production_template
+#  variables:
+#    PROJECT_NAME: healthyeatinglive
+#    NEXT_PUBLIC_BACKEND_URL: https://api.healthyeating.live
+#    NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
+#    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
+#    NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
+#    NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
+#    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
+#    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
+#    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
+#    NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
+#    NEXT_PUBLIC_COMPANY_INN: 101601117953
+#    NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 build_dietaquest:
-  extends: .build_template
+  extends: .build_development_template
   variables:
     PROJECT_NAME: dietaquest
-    NEXT_PUBLIC_BACKEND_URL: https://api.dieta.quest
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovebot.info
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
     NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/B2djrUpnIk-HrA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
     NEXT_PUBLIC_COMPANY_INN: 101601117953
     NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 build_lovebotinfo:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: lovebotinfo
     NEXT_PUBLIC_BACKEND_URL: https://api.lovebot.info
@@ -175,13 +247,13 @@ build_lovebotinfo:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Деревлев Александр Генадьевич
     NEXT_PUBLIC_COMPANY_INN: 101601117953
     NEXT_PUBLIC_COMPANY_OGRNIP: 322100000008640
 
 build_xlovebotxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: xlovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -191,14 +263,14 @@ build_xlovebotxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
 
 build_pay-love-botxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: pay-love-botxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -208,13 +280,13 @@ build_pay-love-botxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
 build_loverbotpayxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: loverbotpayxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -224,13 +296,13 @@ build_loverbotpayxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
 build_lovebotvkxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: lovebotvkxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -240,13 +312,13 @@ build_lovebotvkxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
 build_paylovebotxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: paylovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -256,13 +328,13 @@ build_paylovebotxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
 build_paylovebot1xyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: paylovebot1xyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -272,13 +344,13 @@ build_paylovebot1xyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 190901248906
     NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
 
 build_loverbotingxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: loverbotingxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -288,13 +360,13 @@ build_loverbotingxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 190901248906
     NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
 
 build_love-bot-vkxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: love-bot-vkxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -304,13 +376,13 @@ build_love-bot-vkxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 190901248906
     NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
 
 build_lovelybotxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: lovelybotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -320,13 +392,13 @@ build_lovelybotxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
 build_mylovebotxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: mylovebotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -336,29 +408,29 @@ build_mylovebotxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
 build_loverzonexyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: loverzonexyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://disk.yandex.ru/i/0qM9oLcZPDACLg
-    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/Ar-kpeGAK_ALYg
+    NEXT_PUBLIC_TARIFFS: https://disk.yandex.ru/i/21yMl9va4fl2iA
     NEXT_PUBLIC_USER_AGREEMENT: https://disk.yandex.ru/i/zyxYkcoz9bdx-Q
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 982 рублей за каждые 5 дней использования сервиса. В случае нехватки средств, спустя 6 часа, мы переведем вас на тариф со списаниями по 694 руб за каждые 3 дня или 197 руб за каждый день доступа к сервису.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за каждые 3 дня
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 5 дня после получения пробного доступа, списывается 982 рублей за каждые 5 дней использования сервиса. В случае нехватки средств, спустя 6 часа, мы переведем вас на тариф со списаниями по 694 руб за каждые 3 дня или 197 руб за каждый день доступа к сервису.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 982 рублей за каждые 5 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
 build_loverpayxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: loverpayxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -368,13 +440,13 @@ build_loverpayxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Жигульских Анастасия Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 360601215399
     NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
 build_findloverbotxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: findloverbotxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -384,13 +456,13 @@ build_findloverbotxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 990 рублей за каждые 72 часа использования сервиса.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 ₽ за кажные 3 дня
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 990 рублей за кажные 3 дня
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 190901248906
     NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
 
 build_lovefunxyz:
-  extends: .build_template
+  extends: .build_production_template
   variables:
     PROJECT_NAME: lovefunxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
@@ -400,7 +472,7 @@ build_lovefunxyz:
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 7 дня после получения пробного доступа, списывается 2890 рублей за каждые 7 дней использования сервиса. В случае нехватки средств, спустя 6 часа, мы переведем вас на тариф со списаниями по 1690 руб за каждые 3 дня или 690 руб за каждый день доступа к сервису.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 ₽ за каждые 7 дней
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 рублей за каждые 7 дней
     NEXT_PUBLIC_COMPANY_NAME: ИП Алевская Ульяна Сергеевна
     NEXT_PUBLIC_COMPANY_INN: 190901248906
     NEXT_PUBLIC_COMPANY_OGRNIP: 322190000016507
@@ -411,14 +483,14 @@ deploy_production_loverbotxyz:
     PROJECT_NAME: loverbotxyz
     VIRTUAL_HOST: loverbot.xyz
 
-deploy_production_healthyeatinglive:
-  extends: .deploy_production_template
-  variables:
-    PROJECT_NAME: healthyeatinglive
-    VIRTUAL_HOST: healthyeating.live
+#deploy_production_healthyeatinglive:
+#  extends: .deploy_production_template
+#  variables:
+#    PROJECT_NAME: healthyeatinglive
+#    VIRTUAL_HOST: healthyeating.live
 
 deploy_production_dietaquest:
-  extends: .deploy_production_template
+  extends: .deploy_development_template
   variables:
     PROJECT_NAME: dietaquest
     VIRTUAL_HOST: dieta.quest
