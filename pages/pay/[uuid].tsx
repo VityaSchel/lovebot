@@ -211,7 +211,7 @@ export default function SubscriptionPaymentPage(props: any) {
                   <span>Безопасная оплата</span>
                 </div>
                 {showCheckboxes &&
-                  <span className={styles.warningTitle}>Подписка на функционал ПранкБот для звонков</span>}
+                  <span className={styles.warningTitle}>Подписка на функционал Лавбота</span>}
                 {
                   showCheckboxes
                     ? <>
