@@ -453,7 +453,7 @@ build_lovescaningxyz:
     NEXT_PUBLIC_TARIFFS: https://cdn.paylovebot.xyz/tariffs/2890.7_1690.3_690.7_390.1_20.10.2022.pdf
     NEXT_PUBLIC_USER_AGREEMENT: https://docs.google.com/document/d/1wUCaCHZGo42OHUtUZcL2e1y80lrDDIext-Qs7N5UFZw/edit?usp=sharing
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
-    NEXT_PUBLIC_BOT_LINK: vk.me/lovescan
+    NEXT_PUBLIC_BOT_LINK: vk.me/public216833148
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 2890 рублей за каждые 14 дней использования сервиса. В случае нехватки средств, спустя 6 часа, мы переведем вас на тариф со списаниями по 1690 рублей за каждые 7 дней или 690 рублей за каждые 7 дней или 390 рублей за каждый день доступа к сервису.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 рублей за кажные 3 дня
     NEXT_PUBLIC_PAY_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 2890 рублей за каждые 14 дней или 1690 рублей за каждые 7 дней или 690 рублей за каждые 7 дней или 390 рублей за каждый день
