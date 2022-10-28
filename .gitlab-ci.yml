@@ -450,7 +450,7 @@ build_lovescaningxyz:
     PROJECT_NAME: lovescaningxyz
     NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
     NEXT_PUBLIC_DATA_POLICY: https://docs.google.com/document/d/11ntwB7fqvLM1RYB1-W0y4046AkH3e8qhNb3qyWWETo8/edit?usp=sharing
-    NEXT_PUBLIC_TARIFFS: https://cdn.paylovebot.xyz/tariffs/2890.7_1690.3_690.7_390.1_20.10.2022.pdf
+    NEXT_PUBLIC_TARIFFS: https://docs.google.com/document/d/1tVemhbMoyIqJA_FddYUxc39rf3oD23p8KpsVXfPq03Q/edit?usp=sharing
     NEXT_PUBLIC_USER_AGREEMENT: https://docs.google.com/document/d/1wUCaCHZGo42OHUtUZcL2e1y80lrDDIext-Qs7N5UFZw/edit?usp=sharing
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
     NEXT_PUBLIC_BOT_LINK: vk.me/public216833148
