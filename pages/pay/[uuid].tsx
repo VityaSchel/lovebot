@@ -21,6 +21,7 @@ import Heading from '%/components/common/Heading'
 import Input from '%/components/common/Input'
 import Checkbox from '%/components/common/Checkbox'
 import Button from '%/components/common/Button'
+import LinkDeactivatedModal from '%/components/LinkDeactivatedModal'
 
 import { ReactComponent as Logo } from '%/assets/ModulePage/heartIcon.svg'
 import { ReactComponent as ShieldIcon } from '%/assets/payments/shield.svg'
@@ -31,6 +32,7 @@ export default function SubscriptionPaymentPage(props: any) {
   const router = useRouter()
   const [success, setSuccess] = useState(false)
   const [showCheckboxes, setShowCheckboxes] = React.useState(false)
+  const [viewLinkDeactivated, seViewLinkDeactivated] = React.useState(false)
   
   let verifyCheckbox = true
 
@@ -53,11 +55,29 @@ export default function SubscriptionPaymentPage(props: any) {
     }
   }
 
+  React.useEffect(() => {
+    if(props.amountStatus != 'in_process'){
+      seViewLinkDeactivated(true)
+    }
+
+    if(props.amountStatus == 200){
+      seViewLinkDeactivated(false)
+    }
+  }, [props])
 
   React.useEffect(() => {
     if (!verifyCheckbox) return
     verifyCheckbox = false
     setShowCheckboxes(hasCheckboxes(props.companyActive))
+
+    if(props.amountStatus != 'in_process'){
+      seViewLinkDeactivated(true)
+    }
+
+    if(props.amountStatus == 200){
+      seViewLinkDeactivated(false)
+    }
+
   }, [])
 
   function Form() {
@@ -265,6 +285,7 @@ export default function SubscriptionPaymentPage(props: any) {
           amountWithoutDiscount: props.amountWithoutDiscount
         }}
       />
+      <LinkDeactivatedModal view={viewLinkDeactivated} />
     </main>
   )
 }
@@ -305,6 +326,7 @@ export async function getServerSideProps(context: any) {
       companyActive,
       paths: [],
       fallback: true,
+      amountStatus: amountData.status,
       amount: amountData.amount,
       amountWithoutDiscount: amountData.amountWithoutDiscount,
       ...(await serverSideTranslations(context.locale, ['common', 'homePage']))
