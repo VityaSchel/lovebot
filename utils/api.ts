@@ -77,11 +77,11 @@ export const getPaymentAmount = async (props: getPaymentAmountProps) => {
   try {
     const { uuid } = props
 
-    const { data: paymentAmount } = await api.get(`/payments/${uuid}`)
+    const { data: paymentData } = await api.get(`/payments/${uuid}`)
 
-    console.log('paymentAmount', paymentAmount)
+    console.log('paymentAmount', paymentData)
 
-    return paymentAmount
+    return paymentData
   } catch (error: any) {
     catchError(error)
   }
