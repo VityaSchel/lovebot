@@ -55,28 +55,28 @@ export default function SubscriptionPaymentPage(props: any) {
     }
   }
 
-  // React.useEffect(() => {
-  //   if(props.amountStatus != 'in_process'){
-  //     seViewLinkDeactivated(true)
-  //   }
+  React.useEffect(() => {
+    if(props.amountStatus != 'in_process'){
+      seViewLinkDeactivated(true)
+    }
 
-  //   if(props.amountStatus == 200){
-  //     seViewLinkDeactivated(false)
-  //   }
-  // }, [props])
+    if(props.amountStatus == 200){
+      seViewLinkDeactivated(false)
+    }
+  }, [props])
 
   React.useEffect(() => {
     if (!verifyCheckbox) return
     verifyCheckbox = false
     setShowCheckboxes(hasCheckboxes(props.companyActive))
 
-    // if(props.amountStatus != 'in_process'){
-    //   seViewLinkDeactivated(true)
-    // }
+    if(props.amountStatus != 'in_process'){
+      seViewLinkDeactivated(true)
+    }
 
-    // if(props.amountStatus == 200){
-    //   seViewLinkDeactivated(false)
-    // }
+    if(props.amountStatus == 200){
+      seViewLinkDeactivated(false)
+    }
 
   }, [])
 
@@ -290,46 +290,46 @@ export default function SubscriptionPaymentPage(props: any) {
   )
 }
 
-// export async function getServerSideProps(context: any) {
-//   const errorRedirect = () => ({
-//     redirect: {
-//       destination: '/error',
-//       permanent: false
-//     }
-//   })
+export async function getServerSideProps(context: any) {
+  const errorRedirect = () => ({
+    redirect: {
+      destination: '/error',
+      permanent: false
+    }
+  })
 
-//   const { uuid } = context.query
+  const { uuid } = context.query
 
-//   if (!uuid) {
-//     return errorRedirect()
-//   }
+  if (!uuid) {
+    return errorRedirect()
+  }
 
-//   const amountData = await getPaymentAmount({ uuid: uuid })
+  const amountData = await getPaymentAmount({ uuid: uuid })
 
-//   if (!amountData) {
-//     return errorRedirect()
-//   }
+  if (!amountData) {
+    return errorRedirect()
+  }
 
-//   const adsArgument = context.query.ads
-//   let companyActive = false
+  const adsArgument = context.query.ads
+  let companyActive = false
 
-//   if (adsArgument) {
-//     const companyID = Number(adsArgument)
+  if (adsArgument) {
+    const companyID = Number(adsArgument)
 
-//     if (Number.isInteger(companyID)) {
-//       companyActive = await isCompanyActive(companyID)
-//     }
-//   }
+    if (Number.isInteger(companyID)) {
+      companyActive = await isCompanyActive(companyID)
+    }
+  }
 
-//   return {
-//     props: {
-//       companyActive,
-//       paths: [],
-//       fallback: true,
-//       amountStatus: amountData.status,
-//       amount: amountData.amount,
-//       amountWithoutDiscount: amountData.amountWithoutDiscount,
-//       ...(await serverSideTranslations(context.locale, ['common', 'homePage']))
-//     }
-//   }
-// }
+  return {
+    props: {
+      companyActive,
+      paths: [],
+      fallback: true,
+      amountStatus: amountData.status,
+      amount: amountData.amount,
+      amountWithoutDiscount: amountData.amountWithoutDiscount,
+      ...(await serverSideTranslations(context.locale, ['common', 'homePage']))
+    }
+  }
+}
