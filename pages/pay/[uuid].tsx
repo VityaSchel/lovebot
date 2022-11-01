@@ -32,7 +32,7 @@ export default function SubscriptionPaymentPage(props: any) {
   const router = useRouter()
   const [success, setSuccess] = useState(false)
   const [showCheckboxes, setShowCheckboxes] = React.useState(false)
-  const [viewLinkDeactivated, seViewLinkDeactivated] = React.useState(false)
+  const [viewLinkDeactivated, setViewLinkDeactivated] = React.useState(false)
   
   let verifyCheckbox = true
 
@@ -56,12 +56,16 @@ export default function SubscriptionPaymentPage(props: any) {
   }
 
   React.useEffect(() => {
-    if(props.amountStatus != 'in_process'){
-      seViewLinkDeactivated(true)
-    }
-
-    if(props.amountStatus == 200){
-      seViewLinkDeactivated(false)
+    switch (props.paymentStatus) {
+      case 'paid':
+        setViewLinkDeactivated(true)
+        break
+      case 'canceled':
+        setViewLinkDeactivated(true)
+        break
+      default:
+        setViewLinkDeactivated(false)
+        break
     }
   }, [props])
 
@@ -69,15 +73,6 @@ export default function SubscriptionPaymentPage(props: any) {
     if (!verifyCheckbox) return
     verifyCheckbox = false
     setShowCheckboxes(hasCheckboxes(props.companyActive))
-
-    if(props.amountStatus != 'in_process'){
-      seViewLinkDeactivated(true)
-    }
-
-    if(props.amountStatus == 200){
-      seViewLinkDeactivated(false)
-    }
-
   }, [])
 
   function Form() {
@@ -304,9 +299,9 @@ export async function getServerSideProps(context: any) {
     return errorRedirect()
   }
 
-  const amountData = await getPaymentAmount({ uuid: uuid })
+  const paymentData = await getPaymentAmount({ uuid: uuid })
 
-  if (!amountData) {
+  if (!paymentData) {
     return errorRedirect()
   }
 
@@ -326,9 +321,9 @@ export async function getServerSideProps(context: any) {
       companyActive,
       paths: [],
       fallback: true,
-      amountStatus: amountData.status,
-      amount: amountData.amount,
-      amountWithoutDiscount: amountData.amountWithoutDiscount,
+      paymentStatus: paymentData.status,
+      amount: paymentData.amount,
+      amountWithoutDiscount: paymentData.amountWithoutDiscount,
       ...(await serverSideTranslations(context.locale, ['common', 'homePage']))
     }
   }
