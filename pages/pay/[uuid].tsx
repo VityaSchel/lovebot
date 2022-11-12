@@ -23,7 +23,7 @@ import Checkbox from '%/components/common/Checkbox'
 import Button from '%/components/common/Button'
 import LinkDeactivatedModal from '%/components/LinkDeactivatedModal'
 
-import { ReactComponent as Logo } from '%/assets/ModulePage/phoneIcon.svg'
+import { ReactComponent as Logo } from '%/assets/ModulePage/heartIcon.svg'
 import { ReactComponent as ShieldIcon } from '%/assets/payments/shield.svg'
 
 import styles from '%/styles/SubscriptionPayment.module.scss'
