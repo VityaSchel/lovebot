@@ -13,8 +13,8 @@ import {
   getPaymentAmount,
   getPaymentData,
   setPaymentEmail,
-  isCompanyActive,
-  pay
+  pay,
+  getCompanyStatus
 } from '%/utils'
 
 import Heading from '%/components/common/Heading'
@@ -23,7 +23,7 @@ import Checkbox from '%/components/common/Checkbox'
 import Button from '%/components/common/Button'
 import LinkDeactivatedModal from '%/components/LinkDeactivatedModal'
 
-import { ReactComponent as Logo } from '%/assets/ModulePage/heartIcon.svg'
+import { ReactComponent as Logo } from '%/assets/ModulePage/phoneIcon.svg'
 import { ReactComponent as ShieldIcon } from '%/assets/payments/shield.svg'
 
 import styles from '%/styles/SubscriptionPayment.module.scss'
@@ -31,28 +31,38 @@ import styles from '%/styles/SubscriptionPayment.module.scss'
 export default function SubscriptionPaymentPage(props: any) {
   const router = useRouter()
   const [success, setSuccess] = useState(false)
+  const [showTextWithPrices, setShowTextWithPrices] = React.useState(false)
   const [showCheckboxes, setShowCheckboxes] = React.useState(false)
   const [viewLinkDeactivated, setViewLinkDeactivated] = React.useState(false)
-  
+
   let verifyCheckbox = true
 
-  const hasCheckboxes = (companyActive: boolean): boolean => {
-    if (Cookies.get('visited') === undefined) {
-      const params = new URLSearchParams(window.location.search)
-      if (params.has('ads') && companyActive) {
-        Cookies.set('visited', (new Date()).toISOString())
+  const hasTextWithPrices = (companyStatus: string): boolean => {
+    const params = new URLSearchParams(window.location.search)
 
-        const params = new URLSearchParams(window.location.search)
-        // params.delete('ads')
-        window.history.pushState({}, '', window.location.pathname + (params.toString() && '?' + params.toString()))
-
-        return false
-      } else {
-        return true
-      }
-    } else {
+    if (!params.has('ads')) {
       return true
     }
+
+    if (Cookies.get('visited') !== undefined) {
+      return true
+    }
+
+    return !(companyStatus === 'active' || companyStatus === 'active_checkboxes');
+  }
+
+  const hasCheckboxes = (companyStatus: string): boolean => {
+    const params = new URLSearchParams(window.location.search)
+
+    if (!params.has('ads')) {
+      return true
+    }
+
+    if (Cookies.get('visited') !== undefined) {
+      return true
+    }
+
+    return companyStatus !== 'active';
   }
 
   React.useEffect(() => {
@@ -72,7 +82,11 @@ export default function SubscriptionPaymentPage(props: any) {
   React.useEffect(() => {
     if (!verifyCheckbox) return
     verifyCheckbox = false
-    setShowCheckboxes(hasCheckboxes(props.companyActive))
+
+    setShowTextWithPrices(hasTextWithPrices(props.companyStatus))
+    setShowCheckboxes(hasCheckboxes(props.companyStatus))
+    Cookies.set('visited', (new Date()).toISOString())
+
   }, [])
 
   function Form() {
@@ -80,116 +94,116 @@ export default function SubscriptionPaymentPage(props: any) {
     const router = useRouter()
 
     return (
-      <Formik
-        initialValues={{
-          email: '',
-          personalDataAgreement: !showCheckboxes,
-          autoPayAgreement: !showCheckboxes
-        }}
-        validationSchema={
-          Yup.object().shape({
-            email: Yup.string()
-              .email(t('form_errors.email_format_invalid', { ns: 'homePage' }))
-              .required(t('form_errors.required', { ns: 'homePage' })),
-            personalDataAgreement: Yup.bool()
-              .equals([true], t('form_errors.must_be_checked', { ns: 'homePage' }))
-              .required(t('form_errors.required', { ns: 'homePage' })),
-            autoPayAgreement: Yup.bool()
-              .equals([true], t('form_errors.must_be_checked', { ns: 'homePage' }))
-              .required(t('form_errors.required', { ns: 'homePage' }))
-          })
-        }
-        onSubmit={(values, { setSubmitting }) => {
-          setPaymentEmail({ email: values.email, uuid: router.query.uuid }).then(resPaymentInfo => {
-            getPaymentData({ uuid: router.query.uuid }).then(resPaymentData => {
-              const { cloudpayments } = resPaymentData
+        <Formik
+            initialValues={{
+              email: '',
+              personalDataAgreement: !showCheckboxes,
+              autoPayAgreement: !showCheckboxes
+            }}
+            validationSchema={
+              Yup.object().shape({
+                email: Yup.string()
+                    .email(t('form_errors.email_format_invalid', { ns: 'homePage' }))
+                    .required(t('form_errors.required', { ns: 'homePage' })),
+                personalDataAgreement: Yup.bool()
+                    .equals([true], t('form_errors.must_be_checked', { ns: 'homePage' }))
+                    .required(t('form_errors.required', { ns: 'homePage' })),
+                autoPayAgreement: Yup.bool()
+                    .equals([true], t('form_errors.must_be_checked', { ns: 'homePage' }))
+                    .required(t('form_errors.required', { ns: 'homePage' }))
+              })
+            }
+            onSubmit={(values, { setSubmitting }) => {
+              setPaymentEmail({ email: values.email, uuid: router.query.uuid }).then(resPaymentInfo => {
+                getPaymentData({ uuid: router.query.uuid }).then(resPaymentData => {
+                  const { cloudpayments } = resPaymentData
 
-              pay({ cloudpayments, onSuccess: () => setSuccess(true) })
-              setSubmitting(false)
-            })
-          })
-        }}
-      >
-        {({
-          values,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          isSubmitting,
-          setFieldValue
-        }) => (
-          <form onSubmit={handleSubmit}>
-            <Input
-              type='email'
-              name='email'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.email}
-              placeholder={'Введите ваш email'}
-              disabled={isSubmitting}
-              className={styles.email}
-            />
-            {showCheckboxes && <Checkbox
-              id='perdonal_data_agreement'
-              value={values.personalDataAgreement}
-              onChange={value => setFieldValue('personalDataAgreement', value)}
-              disabled={isSubmitting}
-              className={styles.terms}
-              longLabel
-            >
-              Согласен с политикой обработки персональных данных, правилами предоставления услуг по подписке, 
-              <Link href={`${config.tariffs}`}>
-                <a target='_blank' className={styles.termsLink}>
-                офертой рекуррентных платежей
-                </a>
-              </Link>, <Link href={`${config.userAgreement}`}>
-                <a target='_blank' className={styles.termsLink}>
-                договором-офертой и условиями использования
-                </a>
-              </Link>
-            </Checkbox>}
-            {showCheckboxes && <Checkbox
-              id='auto_pay_agreement'
-              value={values.autoPayAgreement}
-              onChange={value => setFieldValue('autoPayAgreement', value)}
-              disabled={isSubmitting}
-              className={styles.terms}
-              longLabel
-            >
-              Я согласен подключить автоматические платежи по подписке. Сумма списаний согласно 
-              <Link href={`${config.tariffs}`}>
-                <a target='_blank' className={styles.termsLink}>
-                тарифам
-                </a>
-              </Link> составит {config.textSecondCheckbox}
-            </Checkbox>}
-            <div>
-              <Button
-                disabled={isSubmitting || showCheckboxes && (!values.personalDataAgreement || !values.autoPayAgreement)}
-                buttonProps={{
-                  onClick: handleSubmit
-                }}
-              >Оплатить</Button>
-            </div>
-          </form>
-        )}
-      </Formik>
+                  pay({ cloudpayments, onSuccess: () => setSuccess(true) })
+                  setSubmitting(false)
+                })
+              })
+            }}
+        >
+          {({
+              values,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+              setFieldValue
+            }) => (
+              <form onSubmit={handleSubmit}>
+                <Input
+                    type='email'
+                    name='email'
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    placeholder={'Введите ваш email'}
+                    disabled={isSubmitting}
+                    className={styles.email}
+                />
+                {showCheckboxes && <Checkbox
+                    id='perdonal_data_agreement'
+                    value={values.personalDataAgreement}
+                    onChange={value => setFieldValue('personalDataAgreement', value)}
+                    disabled={isSubmitting}
+                    className={styles.terms}
+                    longLabel
+                >
+                  Согласен с политикой обработки персональных данных, правилами предоставления услуг по подписке,&nbsp;
+                  <Link href={`${config.tariffs}`}>
+                    <a target='_blank' className={styles.termsLink}>
+                      офертой рекуррентных платежей
+                    </a>
+                  </Link>,&nbsp;<Link href={`${config.userAgreement}`}>
+                  <a target='_blank' className={styles.termsLink}>
+                    договором-офертой и условиями использования
+                  </a>
+                </Link>
+                </Checkbox>}
+                {showCheckboxes && <Checkbox
+                    id='auto_pay_agreement'
+                    value={values.autoPayAgreement}
+                    onChange={value => setFieldValue('autoPayAgreement', value)}
+                    disabled={isSubmitting}
+                    className={styles.terms}
+                    longLabel
+                >
+                  Я согласен подключить автоматические платежи по подписке. Сумма списаний согласно &nbsp;
+                  <Link href={`${config.tariffs}`}>
+                    <a target='_blank' className={styles.termsLink}>
+                      тарифам
+                    </a>
+                  </Link> составит {config.textSecondCheckbox}
+                </Checkbox>}
+                <div>
+                  <Button
+                      disabled={isSubmitting || showCheckboxes && (!values.personalDataAgreement || !values.autoPayAgreement)}
+                      buttonProps={{
+                        onClick: handleSubmit
+                      }}
+                  >Оплатить</Button>
+                </div>
+              </form>
+          )}
+        </Formik>
     )
   }
 
   function PaymentSuccess() {
     return (
-      <div className={styles.success}>
-        <Heading variant='h3'>Спасибо за подписку!</Heading>
-        <div className={styles.button}>
-          <Button
-            buttonProps={{
-              onClick: () => router.push('/')
-            }}>
-            Перейти к сервису
-          </Button>
+        <div className={styles.success}>
+          <Heading variant='h3'>Спасибо за подписку!</Heading>
+          <div className={styles.button}>
+            <Button
+                buttonProps={{
+                  onClick: () => router.push('/')
+                }}>
+              Перейти к сервису
+            </Button>
+          </div>
         </div>
-      </div>
     )
   }
 
@@ -206,84 +220,87 @@ export default function SubscriptionPaymentPage(props: any) {
     const { amount, amountWithoutDiscount } = props.subscription
 
     return (
-      <div className={styles.form}>
-        <div className={[styles.heading, styles.decorationLine].join(' ')}>
-          <h1>Оплата счета</h1>
-          <div className={styles.iconContainer}>
+        <div className={styles.form}>
+          <div className={[styles.heading, styles.decorationLine].join(' ')}>
+            <h1>Оплата счета</h1>
+            <div className={styles.iconContainer}>
             <span className={styles.icon}>
               {props.icon}
             </span>
-            <h1>{props.title}</h1>
+              <h1>{props.title}</h1>
+            </div>
           </div>
+          <div className={styles.info}>
+            {
+              success ?
+                  <PaymentSuccess /> :
+                  <>
+                    <div className={styles.securePayment}>
+                      <ShieldIcon />
+                      <span>Безопасная оплата</span>
+                    </div>
+                    {showTextWithPrices &&
+                        <span className={styles.warningTitle}>Подписка на функционал ЛавБота</span>}
+
+                    {
+                      showTextWithPrices
+                          ? <>
+                            {/* <h2>Попробуй всего за</h2> */}
+                            <div className={styles.price}>
+                              <span className={styles.number}>1</span>
+                              <span className={styles.label}>рубль</span>
+                            </div>
+                          </>
+                          : <>
+                            <h2>Попробуй всего за</h2>
+                            <div className={styles.price}>
+                              <span className={styles.number}>{amount}</span>
+                              <span className={styles.label}>{declOfRoubles(amount)}</span>
+                            </div>
+                          </>
+                    }
+                    {/*<span className={styles.insteadOfPrice}>вместо <span*/}
+                    {/*  className={styles.strikethrough}>{amountWithoutDiscount} ₽</span></span>*/}
+                    {showTextWithPrices &&
+                        <span className={styles.warningTitle}>{config?.payPageTextSubscriptionPrices}</span>}
+                    <Form />
+                    {/* <span className={styles.footer}>{amount} ₽ первый месяц, далее {amountWithoutDiscount} ₽</span> */}
+                  </>
+            }
+          </div>
+          <footer>
+            <div className={styles.top}>
+              <span>{config.companyName}</span>
+              <span>ИНН: {config.companyInn}</span>
+              <span>ОГРНИП: {config.companyOgrnip}</span>
+              <span>EMAIL: {config.contactEmail}</span>
+            </div>
+            <div className={styles.links}>
+              <Link href={`${config.userAgreement}`}><a target='_blank'>Пользовательское соглашение</a></Link>
+              <Link href={`${config.dataPolicy}`}><a target='_blank'>Политика обработки данных</a></Link>
+              <Link href='/subscription-cancellation'><a>Отмена подписки</a></Link>
+              <Link href={`${config.tariffs}`}><a target='_blank'>Тарифы</a></Link>
+            </div>
+          </footer>
         </div>
-        <div className={styles.info}>
-          {
-            success ?
-              <PaymentSuccess /> :
-              <>
-                <div className={styles.securePayment}>
-                  <ShieldIcon />
-                  <span>Безопасная оплата</span>
-                </div>
-                {showCheckboxes &&
-                  <span className={styles.warningTitle}>Подписка на функционал Лавбота</span>}
-                {
-                  showCheckboxes
-                    ? <>
-                      {/* <h2>Попробуй всего за</h2> */}
-                      <div className={styles.price}>
-                        <span className={styles.number}>1</span>
-                        <span className={styles.label}>рубль</span>
-                      </div>
-                    </>
-                    : <>
-                      <h2>Попробуй всего за</h2>
-                      <div className={styles.price}>
-                        <span className={styles.number}>{amount}</span>
-                        <span className={styles.label}>{declOfRoubles(amount)}</span>
-                      </div>
-                    </>
-                }
-                {/*<span className={styles.insteadOfPrice}>вместо <span*/}
-                {/*  className={styles.strikethrough}>{amountWithoutDiscount} ₽</span></span>*/}
-                {showCheckboxes &&
-                  <span className={styles.warningTitle}>{config?.payPageTextSubscriptionPrices}</span>}
-                <Form />
-              </>
-          }
-        </div>
-        <footer>
-          <div className={styles.top}>
-            <span>{config.companyName}</span>
-            <span>ИНН: {config.companyInn}</span>
-            <span>ОГРНИП: {config.companyOgrnip}</span>
-            <span>EMAIL: {config.contactEmail}</span>
-          </div>
-          <div className={styles.links}>
-            <Link href={`${config.userAgreement}`}><a target='_blank'>Пользовательское соглашение</a></Link>
-            <Link href={`${config.dataPolicy}`}><a target='_blank'>Политика обработки данных</a></Link>
-            <Link href='/subscription-cancellation'><a>Отмена подписки</a></Link>
-            <Link href={`${config.tariffs}`}><a target='_blank'>Тарифы</a></Link>
-          </div>
-        </footer>
-      </div>
     )
   }
 
   return (
-    <main className={styles.container}>
-      <Info
-        icon={<Logo />}
-        title={'ЛавБот'}
-        subscription={{
-          amount: props.amount,
-          amountWithoutDiscount: props.amountWithoutDiscount
-        }}
-      />
-      <LinkDeactivatedModal view={viewLinkDeactivated} />
-    </main>
+      <main className={styles.container}>
+        <Info
+            icon={<Logo />}
+            title={'ЛавБот'}
+            subscription={{
+              amount: props.amount,
+              amountWithoutDiscount: props.amountWithoutDiscount
+            }}
+        />
+        <LinkDeactivatedModal view={viewLinkDeactivated} />
+      </main>
   )
 }
+
 
 export async function getServerSideProps(context: any) {
   const errorRedirect = () => ({
@@ -306,19 +323,19 @@ export async function getServerSideProps(context: any) {
   }
 
   const adsArgument = context.query.ads
-  let companyActive = false
+  let companyStatus = 'deactivated'
 
   if (adsArgument) {
     const companyID = Number(adsArgument)
 
     if (Number.isInteger(companyID)) {
-      companyActive = await isCompanyActive(companyID)
+      companyStatus = await getCompanyStatus(companyID)
     }
   }
 
   return {
     props: {
-      companyActive,
+      companyStatus,
       paths: [],
       fallback: true,
       paymentStatus: paymentData.status,

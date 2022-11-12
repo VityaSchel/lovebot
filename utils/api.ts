@@ -115,16 +115,15 @@ type CompanyStatusResponse = {
   status: string
 }
 
-export async function isCompanyActive(companyID: number): Promise<boolean> {
+export async function getCompanyStatus(companyID: number): Promise<string> {
   try {
     const query = `/advertising_companies/${companyID}`
     const response = await api.get(query)
     const data: CompanyStatusResponse = response.data
     if (response.status !== 200) throw new Error('Couldn\'t fetch ' + query)
-    return data.status === 'active'
+    return data.status
   } catch (error: any) {
     catchError(error)
-    return false
+    return 'deactivated'
   }
 }
-
