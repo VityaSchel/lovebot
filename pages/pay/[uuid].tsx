@@ -97,8 +97,10 @@ export default function SubscriptionPaymentPage(props: any) {
         <Formik
             initialValues={{
               email: '',
-              personalDataAgreement: !showCheckboxes,
-              autoPayAgreement: !showCheckboxes
+              // personalDataAgreement: !showCheckboxes,
+              // autoPayAgreement: !showCheckboxes
+              personalDataAgreement: true,
+              autoPayAgreement: true
             }}
             validationSchema={
               Yup.object().shape({
