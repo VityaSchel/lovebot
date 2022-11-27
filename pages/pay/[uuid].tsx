@@ -85,14 +85,12 @@ export default function SubscriptionPaymentPage(props: any) {
     }
     verifyCheckbox = false
 
-    if(props.companyStatus === 'deactivated'){
-      return
-    }
-
     setShowCheckboxes(hasCheckboxes(props.companyStatus))
     setShowTextWithPrices(hasTextWithPrices(props.companyStatus))
 
-    Cookies.set('visited', (new Date()).toISOString())
+    if(props.companyStatus !== 'deactivated'){
+      Cookies.set('visited', (new Date()).toISOString())
+    }
 
   }, [])
 
