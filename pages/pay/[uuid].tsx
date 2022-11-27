@@ -241,32 +241,14 @@ export default function SubscriptionPaymentPage(props: any) {
                       <ShieldIcon />
                       <span>Безопасная оплата</span>
                     </div>
-                    {showTextWithPrices &&
-                        <span className={styles.warningTitle}>Подписка на функционал ЛавБота</span>}
-
-                    {
-                      showTextWithPrices
-                          ? <>
-                            {/* <h2>Попробуй всего за</h2> */}
-                            <div className={styles.price}>
-                              <span className={styles.number}>1</span>
-                              <span className={styles.label}>рубль</span>
-                            </div>
-                          </>
-                          : <>
-                            <h2>Попробуй всего за</h2>
-                            <div className={styles.price}>
-                              <span className={styles.number}>{amount}</span>
-                              <span className={styles.label}>{declOfRoubles(amount)}</span>
-                            </div>
-                          </>
-                    }
-                    {/*<span className={styles.insteadOfPrice}>вместо <span*/}
-                    {/*  className={styles.strikethrough}>{amountWithoutDiscount} ₽</span></span>*/}
-                    {showTextWithPrices &&
-                        <span className={styles.warningTitle}>{config?.payPageTextSubscriptionPrices}</span>}
+                    {showTextWithPrices && <span className={styles.warningTitle}>Подписка на функционал ЛавБота</span>}
+                    {!showTextWithPrices && <h2>Попробуй всего за</h2>}
+                    <div className={styles.price}>
+                      <span className={styles.number}>{amount}</span>
+                      <span className={styles.label}>{declOfRoubles(amount)}</span>
+                    </div>
+                    {showTextWithPrices && <span className={styles.warningTitle}>{config?.payPageTextSubscriptionPrices}</span>}
                     <Form />
-                    {/* <span className={styles.footer}>{amount} ₽ первый месяц, далее {amountWithoutDiscount} ₽</span> */}
                   </>
             }
           </div>
