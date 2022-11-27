@@ -88,7 +88,7 @@ export default function SubscriptionPaymentPage(props: any) {
     setShowCheckboxes(hasCheckboxes(props.companyStatus))
     setShowTextWithPrices(hasTextWithPrices(props.companyStatus))
 
-    if(props.companyStatus !== 'deactivated'){
+    if(props.companyStatus === 'active'){
       Cookies.set('visited', (new Date()).toISOString())
     }
 
