@@ -80,10 +80,14 @@ export default function SubscriptionPaymentPage(props: any) {
   }, [props])
 
   React.useEffect(() => {
-    if (!verifyCheckbox) return
+    if (!verifyCheckbox){
+      return
+    }
     verifyCheckbox = false
 
-    if(props.companyStatus === 'deactivated') return
+    if(props.companyStatus === 'deactivated'){
+      return
+    }
 
     setShowCheckboxes(hasCheckboxes(props.companyStatus))
     setShowTextWithPrices(hasTextWithPrices(props.companyStatus))
