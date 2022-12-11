@@ -578,4 +578,4 @@ deploy_production_lovecrushxyz:
   extends: .deploy_production_template
   variables:
     PROJECT_NAME: lovecrushxyz
-    VIRTUAL_HOST: lovecrushxyz
+    VIRTUAL_HOST: lovecrush.xyz
