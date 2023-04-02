@@ -25,7 +25,7 @@ install:
   stage: prepare
   services:
     - name: docker:${DOCKER_VERSION}-dind
-      command: ["--registry-mirror", "https://proxy-registry.skidstor.com"]
+      command: ["--registry-mirror", "https://registry-proxy.x5.money"]
   cache:
     - key:
         files:
@@ -54,7 +54,7 @@ install:
   stage: build
   services:
     - name: docker:${DOCKER_VERSION}-dind
-      command: ["--registry-mirror", "https://proxy-registry.skidstor.com"]
+      command: ["--registry-mirror", "https://registry-proxy.x5.money"]
   cache:
     - key:
         files:
@@ -105,7 +105,7 @@ install:
   stage: build
   services:
     - name: docker:${DOCKER_VERSION}-dind
-      command: ["--registry-mirror", "https://proxy-registry.skidstor.com"]
+      command: ["--registry-mirror", "https://registry-proxy.x5.money"]
   cache:
     - key:
         files:
@@ -478,22 +478,22 @@ install:
 #    NEXT_PUBLIC_COMPANY_INN: 360601215399
 #    NEXT_PUBLIC_COMPANY_OGRNIP: 322366800070219
 
-build_loverbotinfo:
+build_lovefinderclick:
   extends: .build_production_template
   variables:
-    PROJECT_NAME: loverbotinfo
-    NEXT_PUBLIC_BACKEND_URL: https://api.paylovebot.xyz
+    PROJECT_NAME: lovefinderclick
+    NEXT_PUBLIC_BACKEND_URL: https://api.lovefinder.click
     NEXT_PUBLIC_DATA_POLICY: https://docs.google.com/document/d/11ntwB7fqvLM1RYB1-W0y4046AkH3e8qhNb3qyWWETo8/edit?usp=sharing
-    NEXT_PUBLIC_TARIFFS: https://docs.google.com/document/d/1xQCmWj0NS75XtY2Tyto2f99_SLW6MQm9661toM0j-GY/edit?usp=sharing
+    NEXT_PUBLIC_TARIFFS: https://cdn-pranks.x5.money/tariffs.pdf
     NEXT_PUBLIC_USER_AGREEMENT: https://docs.google.com/document/d/1wUCaCHZGo42OHUtUZcL2e1y80lrDDIext-Qs7N5UFZw/edit?usp=sharing
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
-    NEXT_PUBLIC_BOT_LINK: vk.me/public218458904
-    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: составит 1 рубль за получение пробного доступа. В дальнейшем, через 3 дня после получения пробного доступа, списывается 1784 рублей за каждые 14 дней использования сервиса. В случае нехватки средств, спустя 6 часа, мы переведем вас на тариф со списаниями по 896 рублей за каждые 7 дней или 583 рублей за каждые 4 дня или 194 рублей за каждый день доступа к сервису.
-    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 1784 рублей за кажные 3 дня
-    NEXT_PUBLIC_PAY_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 1784 рублей за каждые 14 дней или 896 рублей за каждые 7 дней или 583 рублей за каждые 4 дня или 194 рублей за каждый день
-    NEXT_PUBLIC_COMPANY_NAME: ИП Андреев Максим Дмитриевич
-    NEXT_PUBLIC_COMPANY_INN: 47514963896
-    NEXT_PUBLIC_COMPANY_OGRNIP: 322470400100605
+    NEXT_PUBLIC_BOT_LINK: t.me/prankach_bot
+    NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 985 рублей за каждые 14 дней использования сервиса.
+    NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 985 ₽ за каждые 14 дней
+    NEXT_PUBLIC_PAY_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 985 рублей за каждые 14 дней или 195 рублей за каждые 3 дня
+    NEXT_PUBLIC_COMPANY_NAME: ИП Круковский Андрей Николаевич
+    NEXT_PUBLIC_COMPANY_INN: 780535623621
+    NEXT_PUBLIC_COMPANY_OGRNIP: 322784700279882
 
 #deploy_production_dietaquest:
 #  extends: .deploy_development_template
@@ -597,8 +597,8 @@ build_loverbotinfo:
 #    PROJECT_NAME: lovecrushxyz
 #    VIRTUAL_HOST: lovecrush.xyz
 
-deploy_production_loverbotinfo:
+deploy_production_lovefinderclick:
   extends: .deploy_production_template
   variables:
-    PROJECT_NAME: loverbotinfo
-    VIRTUAL_HOST: loverbot.info
+    PROJECT_NAME: lovefinderclick
+    VIRTUAL_HOST: lovefinder.click
