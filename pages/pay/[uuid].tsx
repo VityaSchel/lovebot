@@ -262,7 +262,7 @@ export default function SubscriptionPaymentPage(props: any) {
               <span>{config.companyName}</span>
               <span>ИНН: {config.companyInn}</span>
               <span>ОГРНИП: {config.companyOgrnip}</span>
-              <span>EMAIL: {config.contactEmail}</span>
+              {/*<span>EMAIL: {config.contactEmail}</span>*/}
             </div>
             <div className={styles.links}>
               <Link href={`${config.userAgreement}`}><a target='_blank'>Пользовательское соглашение</a></Link>
