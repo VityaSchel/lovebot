@@ -128,7 +128,7 @@ build_lovefinderclick:
     NEXT_PUBLIC_TARIFFS: https://cdn-pranks.x5.money/tariffs.pdf
     NEXT_PUBLIC_USER_AGREEMENT: https://docs.google.com/document/d/1wUCaCHZGo42OHUtUZcL2e1y80lrDDIext-Qs7N5UFZw/edit?usp=sharing
     NEXT_PUBLIC_CONTACT_EMAIL: promohelper@proton.me
-    NEXT_PUBLIC_BOT_LINK: t.me/prankach_bot
+    NEXT_PUBLIC_BOT_LINK: vk.com/public219803842
     NEXT_PUBLIC_TEXT_SECOND_CHECKBOX: 1 рубль за получение пробного доступа. В дальнейшем, через 72 часа после получения пробного доступа, списывается 985 рублей за каждые 14 дней использования сервиса.
     NEXT_PUBLIC_MAIN_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 985 ₽ за каждые 14 дней
     NEXT_PUBLIC_PAY_PAGE_TEXT_SUBSCRIPTION_PRICES: Далее 985 рублей за каждые 14 дней или 195 рублей за каждые 3 дня
