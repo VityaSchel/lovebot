@@ -33,21 +33,21 @@ export default function SubscriptionCancel() {
           card_last: Yup.number().required(t('form_errors.required'))
         })}
         onSubmit={(values: { card_first: string; card_last: string }, { setSubmitting }: any) => {
-          subscriptionsUnsubscribe({
-            firstNumbers: values.card_first.toString(),
-            lastNumbers: values.card_last.toString()
-          })
-            .then((res) => {
-              if (res?.status == 200) {
+        //   subscriptionsUnsubscribe({
+        //     firstNumbers: values.card_first.toString(),
+        //     lastNumbers: values.card_last.toString()
+        //   })
+        //     .then((res) => {
+        //       if (res?.status == 200) {
                 setSuccess(true)
-              } else {
-                setError(true)
-              }
-            })
-            .finally(() => {
+        //       } else {
+        //         setError(true)
+        //       }
+        //     })
+        //     .finally(() => {
               setSubmitting(false)
-            })
-        }}
+        //     })
+        // }}
       >
         {({ values, handleChange, handleBlur, handleSubmit, isSubmitting, setFieldValue }) => (
           <form onSubmit={handleSubmit}>

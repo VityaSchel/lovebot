@@ -121,14 +121,14 @@ export default function SubscriptionPaymentPage(props: any) {
               })
             }
             onSubmit={(values, { setSubmitting }) => {
-              setPaymentEmail({ email: values.email, uuid: router.query.uuid }).then(resPaymentInfo => {
-                getPaymentData({ uuid: router.query.uuid }).then(resPaymentData => {
-                  const { cloudpayments } = resPaymentData
+              // setPaymentEmail({ email: values.email, uuid: router.query.uuid }).then(resPaymentInfo => {
+              //   getPaymentData({ uuid: router.query.uuid }).then(resPaymentData => {
+              //     const { cloudpayments } = resPaymentData
 
-                  pay({ cloudpayments, onSuccess: () => setSuccess(true) })
-                  setSubmitting(false)
-                })
-              })
+              //     pay({ cloudpayments, onSuccess: () => setSuccess(true) })
+              //     setSubmitting(false)
+              //   })
+              // })
             }}
         >
           {({
@@ -305,7 +305,7 @@ export async function getServerSideProps(context: any) {
     return errorRedirect()
   }
 
-  const paymentData = await getPaymentAmount({ uuid: uuid })
+  const paymentData = { status: '', amount: 699, amountWithoutDiscount:1999 }//await getPaymentAmount({ uuid: uuid })
 
   if (!paymentData) {
     return errorRedirect()
@@ -318,13 +318,13 @@ export async function getServerSideProps(context: any) {
     const companyID = Number(adsArgument)
 
     if (Number.isInteger(companyID)) {
-      companyStatus = await getCompanyStatus(companyID)
+      companyStatus = 'active_checkboxes'//await getCompanyStatus(companyID)
     }
   }
 
   return {
     props: {
-      companyStatus,
+      companyStatus: '',
       paths: [],
       fallback: true,
       paymentStatus: paymentData.status,
