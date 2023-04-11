@@ -39,15 +39,16 @@ export default function SubscriptionCancel() {
         //   })
         //     .then((res) => {
         //       if (res?.status == 200) {
-                setSuccess(true)
-        //       } else {
-        //         setError(true)
-        //       }
-        //     })
-        //     .finally(() => {
-              setSubmitting(false)
+          setSuccess(true)
+          //       } else {
+          //         setError(true)
+          //       }
+          //     })
+          //     .finally(() => {
+          setSubmitting(false)
         //     })
         // }}
+        }}
       >
         {({ values, handleChange, handleBlur, handleSubmit, isSubmitting, setFieldValue }) => (
           <form onSubmit={handleSubmit}>
