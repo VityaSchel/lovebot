@@ -252,7 +252,7 @@ export default function SubscriptionPaymentPage(props: any) {
                       <span className={styles.number}>{amount}</span>
                       <span className={styles.label}>{declOfRoubles(amount)}</span>
                     </div>
-                    {showTextWithPrices && <span className={styles.warningTitle}>{config?.payPageTextSubscriptionPrices}</span>}
+                    {/*{showTextWithPrices && <span className={styles.warningTitle}>{config?.payPageTextSubscriptionPrices}</span>}*/}
                     <Form />
                   </>
             }
